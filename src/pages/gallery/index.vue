@@ -3,7 +3,7 @@
     <div class="face">
       <div class="face-content">
         <h1 class="title" data-aos="fade-up">화랑에 오신 것을 환영합니다.</h1>
-        <p class="manifesto">이 곳에서 제 작업과 디자인 철학을 만나보세요.</p>
+        <p class="manifesto">이 곳에서 나의 작업과 디자인 철학을 만나보세요.</p>
       </div>
     </div>
 
@@ -220,7 +220,7 @@
 			transform: translateY(90%);
 			font-size: 2.2rem;
 			font-weight: 800;
-			animation: ani-title 1.5s ease forwards;
+			animation: ani-title 1.5s ease 0.5s forwards;
 		}
 
 		.manifesto {
@@ -228,7 +228,7 @@
 			transform: translateY(90%);
 			font-size: 1.1rem;
 			font-weight: 400;
-			animation: ani-title 1.3s ease 0.3s forwards;
+			animation: ani-title 1.3s ease 0.8s forwards;
 		}
 	}
 
