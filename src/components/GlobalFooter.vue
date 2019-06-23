@@ -1,5 +1,5 @@
 <template>
-  <footer id="globalfooter">
+  <footer id="globalfooter" :class="{hidden: $store.state.gf.hidden}">
     <div class="wrapper">
       <p class="copyright">&copy; 2019 Jang Haemin</p>
       <p class="payw-member">
@@ -9,6 +9,17 @@
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  created() {
+    if (this.$route.path === '/') {
+      this.$store.state.gf.hidden = true
+    }
+  }
+}
+</script>
+
 
 <style lang="scss" scoped>
 @import '~/assets/scss/global-variables.scss';
@@ -25,6 +36,11 @@
   text-align: center;
   user-select: none;
   cursor: default;
+  transition: opacity 0.5s ease;
+
+  &.hidden {
+    opacity: 0;
+  }
 
   p {
     font-size: 0.8rem;

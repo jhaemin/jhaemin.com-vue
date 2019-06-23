@@ -204,18 +204,13 @@ import anime from 'animejs'
 
 export default {
   mounted() {
-    let homeMain = document.querySelector('#home')
-
-    let homeContent = homeMain.querySelector('.home-content')
-    // let ft = document.querySelector('#globalfooter')
-    // let nav = document.querySelector('#globalnav')
+    let homeContent = this.$el.querySelector('.home-content')
     let intro = document.querySelector('.intro')
 
-    homeMain.style.paddingBottom = '0px'
-    homeContent.style.display = 'none'
-    homeContent.style.opacity = '0'
-    // nav.style.opacity = '0'
-    // ft.style.display = 'none'
+    // hide globalnav and globalfooter
+    this.$store.commit('gn/hide')
+    this.$store.commit('gf/hide')
+
     document.documentElement.style.backgroundColor = '#fff'
 
     let timeoutAmount = 2500
@@ -226,21 +221,16 @@ export default {
     sessionStorage.setItem('sawHome', 'true')
 
     setTimeout(() => {
-      homeMain.removeAttribute('style')
-      // ft.removeAttribute('style')
-      // nav.removeAttribute('style')
-      homeContent.style.display = 'block'
+      homeContent.classList.add('show')
       homeContent.getBoundingClientRect().height
       homeContent.removeAttribute('style')
       document.documentElement.removeAttribute('style')
       intro.style.height = '50vh'
+
+      // show globalnav and globalfooter
+      this.$store.commit('gn/show')
+      this.$store.commit('gf/show')
     }, timeoutAmount)
-
-    if (!homeMain) {
-      return
-    }
-
-    // homeMain.querySelector(".jhaemin-path").classList.add("reveal")
 
     anime({
       targets: '.jhaemin-path',
@@ -280,7 +270,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 @import '~/assets/scss/global-variables.scss';
@@ -343,7 +332,12 @@ export default {
 	}
 
 	.home-content {
-		transition: opacity 0.4s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    
+    &.show {
+      opacity: 1;
+    }
 	}
 
 	.home-block {

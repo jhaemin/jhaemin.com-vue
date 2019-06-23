@@ -1,5 +1,5 @@
 <template>
-  <nav id="globalnav" role="navigation">
+  <nav id="globalnav" role="navigation" :class="{hidden: $store.state.gn.hidden}">
     <div class="gn-container">
       <nuxt-link to="/" class="logo-link">
         <figure class="logo-wrapper">
@@ -82,15 +82,20 @@ export default {
       // this.gnDom.classList.add("mobile-menu-active")
     }
   },
+  created() {
+    if (this.$route.path === '/') {
+      this.$store.state.gn.hidden = true
+    }
+  },
   mounted() {
-    this.gnDom = document.querySelector("#globalnav")
+    this.gnDom = document.querySelector('#globalnav')
 
-		// this.setNavMaxRule()
-		this.setMobileMenu()
+    // this.setNavMaxRule()
+    this.setMobileMenu()
 
-		window.addEventListener("resize", e => {
-			this.gnDom.classList.remove("mobile-menu-active")
-		})
+    window.addEventListener('resize', e => {
+      this.gnDom.classList.remove('mobile-menu-active')
+    })
   }
 }
 </script>
@@ -107,7 +112,12 @@ export default {
   backdrop-filter: blur(20px);
   z-index: 9999;
   border-bottom: 1px solid transparent;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.5s ease;
+
+  &.hidden {
+    opacity: 0;
+    // transform: translateY(-100%);
+  }
 
   &.sticky {
     position: -webkit-sticky;
@@ -174,6 +184,7 @@ export default {
 
     .menu {
       font-size: 0;
+      font-weight: 500;
       padding: 0;
       margin: 0;
       margin-top: 2px;
