@@ -20,6 +20,10 @@ export default {
     ]
   },
   srcDir: 'src',
+  router: {
+    linkActiveClass: 'active-link',
+    linkExactActiveClass: 'exact-active-link'
+  },
   loading: false,
   css: [
     '~/assets/css/fonts.css',
