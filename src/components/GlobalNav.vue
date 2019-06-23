@@ -1,12 +1,16 @@
 <template>
-  <nav id="globalnav" role="navigation" :class="{hidden: $store.state.gn.hidden}">
+  <nav
+    id="globalnav"
+    role="navigation"
+    :class="{hidden: $store.state.gn.hidden, 'mobile-menu-active': menuOpened}"
+  >
     <div class="gn-container">
       <nuxt-link to="/" class="logo-link">
         <figure class="logo-wrapper">
           <img class="logo" src="~/assets/images/jhaemin-logo.svg">
         </figure>
       </nuxt-link>
-      <button class="mobile-menu-btn">
+      <button class="mobile-menu-btn" @click="toggleMenu">
         <div class="cross above"></div>
         <div class="cross below"></div>
       </button>
@@ -19,7 +23,7 @@
 
         <!-- General -->
         <!-- <a href="/about" class="menu-item about">관하여</a> -->
-        <nuxt-link to="/gallery" class="menu-item blog">화랑</nuxt-link>
+        <nuxt-link to="/gallery" class="menu-item blog" @click.native="closeMenu">화랑</nuxt-link>
         <!-- <nuxt-link to="/blog" class="menu-item blog">블로그</nuxt-link> -->
         <!-- <a href="/blog/new" class="menu-item">새 포스트</a> -->
 
@@ -43,43 +47,20 @@
 
 <script>
 export default {
+  data() {
+    return {
+      menuOpened: false
+    }
+  },
   methods: {
-    setNavMaxRule() {
-      let logoWidth = this.gnDom.querySelector('.logo').getBoundingClientRect()
-        .width
-      let menuWidth = this.gnDom.querySelector('.menu').getBoundingClientRect()
-        .width
-      this.threshold = logoWidth + menuWidth + 100
-
-      this.checkWidth()
-      window.addEventListener('resize', e => {
-        this.checkWidth()
-      })
+    toggleMenu() {
+      this.menuOpened = !this.menuOpened
     },
-    checkWidth() {
-      if (window.innerWidth < this.threshold || window.innerWidth < 700) {
-        this.turnMobileModeOn()
-      } else {
-        this.turnDesktopModeOn()
-      }
+    openMenu() {
+      this.menuOpened = true
     },
-    turnMobileModeOn() {
-      this.gnDom.classList.add('mobile')
-    },
-    turnDesktopModeOn() {
-      this.gnDom.classList.remove('mobile')
-    },
-    setMobileMenu() {
-      this.gnDom
-        .querySelector('.mobile-menu-btn')
-        .addEventListener('click', e => {
-          if (this.gnDom.classList.contains('mobile-menu-active')) {
-            this.gnDom.classList.remove('mobile-menu-active')
-          } else {
-            this.gnDom.classList.add('mobile-menu-active')
-          }
-        })
-      // this.gnDom.classList.add("mobile-menu-active")
+    closeMenu() {
+      this.menuOpened = false
     }
   },
   created() {
@@ -88,13 +69,8 @@ export default {
     }
   },
   mounted() {
-    this.gnDom = document.querySelector('#globalnav')
-
-    // this.setNavMaxRule()
-    this.setMobileMenu()
-
     window.addEventListener('resize', e => {
-      this.gnDom.classList.remove('mobile-menu-active')
+      this.closeMenu()
     })
   }
 }
