@@ -90,15 +90,6 @@ img {
 	pointer-events: none;
 }
 
-main {
-	padding-top: $moderate-gap--vertical;
-	min-height: calc(100vh - #{$gn-height} - #{$gf-height});
-	width: calc(100% - #{2 * $moderate-gap});
-	max-width: 30rem;
-	margin: auto;
-	padding-bottom: $moderate-bottom;
-}
-
 input[type="text"],
 input[type="email"],
 input[type="password"],
