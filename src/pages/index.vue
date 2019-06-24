@@ -173,9 +173,9 @@
       <div class="home-block about-preview">
         <h2 class="sub">👋 안녕하세요.</h2>
         <p class="manifesto">
-          디자이너, 프로그래머 장해민입니다.
-          <br>팝송, 영화, 웹툰, 여행을 좋아합니다.
+          개발자 장해민입니다.
           <br>중앙대학교에서 소프트웨어를 공부하고 있습니다.
+          <br>팝송, 영화, 웹툰, 여행을 좋아합니다.
           <br>단순함과 정교함을 추구합니다.
         </p>
       </div>
@@ -205,11 +205,12 @@ import axios from 'axios'
 
 export default {
   mounted() {
-    axios.get('http://localhost:4000/auth', {
-      params: {
-        APIKey: 'hello world'
-      }
-    })
+    axios
+      .get('http://localhost:4000/auth', {
+        params: {
+          APIKey: 'hello world'
+        }
+      })
       .then(res => {
         console.log(res.data)
       })
