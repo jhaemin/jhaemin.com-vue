@@ -179,22 +179,27 @@
           <br>단순함과 정교함을 추구합니다.
         </p>
       </div>
-      <!-- <div class="home-block recent-posts">
-        <h2 class="sub">🖋 최근 작성된 글</h2>
-        <div class="post-container">
-          {#
-          <div class="preparing">아직 작성된 글이 없습니다.</div>
-          #}
-          {% for post in recent_posts %}
-          <div class="post-wrapper">
-            <a href="/blog/{{ post['id'] }}" class="post-link"></a>
-            <h1 class="title">{{ post['title'] }}</h1>
-            <h2 class="subtitle">{{ post['subtitle'] }}</h2>
-            <span class="time">{{ post['posted_at'] }}</span>
+
+      <div class="acts">
+        <nuxt-link to="/gallery">
+          <div class="box gallery">
+            <h1 class="title">갤러리</h1>
+            <p class="description">작업과 디자인 철학을 만나보세요.</p>
           </div>
-          {% endfor %}
+        </nuxt-link>
+        <div class="box blog">
+          <h1 class="title">블로그</h1>
+          <p class="description">기어코 내 글을 볼테야?</p>
         </div>
-      </div>-->
+        <div class="box eodiro">
+          <h1 class="title">어디로</h1>
+          <p class="description">중앙대학교 학생이라면 반드시 써야 하는 필수 서비스!</p>
+        </div>
+        <div class="box github">
+          <h1 class="title">GitHub</h1>
+          <p class="description">github.com/jhaemin</p>
+        </div>
+      </div>
     </div>
   </main>
 </template>
@@ -215,7 +220,6 @@ export default {
     }
   },
   mounted() {
-    console.log(this.project)
     // axios
     //   .get('http://localhost:4000/auth', {
     //     params: {
@@ -228,10 +232,6 @@ export default {
     let homeContent = this.$el.querySelector('.home-content')
     let intro = document.querySelector('.intro')
 
-    // hide globalnav and globalfooter
-    this.$store.commit('gn/hide')
-    this.$store.commit('gf/hide')
-
     document.documentElement.style.backgroundColor = '#fff'
 
     let timeoutAmount = 2500
@@ -241,17 +241,17 @@ export default {
 
     sessionStorage.setItem('sawHome', 'true')
 
-    setTimeout(() => {
-      homeContent.classList.add('show')
-      homeContent.getBoundingClientRect().height
-      homeContent.removeAttribute('style')
-      document.documentElement.removeAttribute('style')
-      intro.style.height = '50vh'
+    // setTimeout(() => {
+    //   homeContent.classList.add('show')
+    //   homeContent.getBoundingClientRect().height
+    //   homeContent.removeAttribute('style')
+    //   document.documentElement.removeAttribute('style')
+    //   intro.style.height = '50vh'
 
-      // show globalnav and globalfooter
-      this.$store.commit('gn/show')
-      this.$store.commit('gf/show')
-    }, timeoutAmount)
+    //   // show globalnav and globalfooter
+    //   this.$store.commit('gn/show')
+    //   this.$store.commit('gf/show')
+    // }, timeoutAmount)
 
     anime({
       targets: '.jhaemin-path',
@@ -306,7 +306,8 @@ export default {
   .intro {
     text-align: center;
     height: calc(100vh - #{$gn-height * 3});
-    min-height: 10rem;
+    height: 50vh;
+    min-height: 15rem;
     display: flex;
     transition: height 1s ease;
 
@@ -353,83 +354,43 @@ export default {
   }
 
   .home-content {
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    .home-block {
+      margin-bottom: $moderate-gap--vertical;
 
-    &.show {
-      opacity: 1;
-    }
-  }
-
-  .home-block {
-    margin-bottom: $moderate-gap--vertical;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    .sub {
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    .manifesto {
-      line-height: 1.5;
-    }
-  }
-
-  .recent-posts {
-    .post-container {
-      margin-top: 1rem;
-
-      .preparing {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.9rem;
-        color: darken($light-gray, 20%);
-        padding: 3rem 1.5rem;
-        @include bordered-box;
+      &:last-child {
+        margin-bottom: 0;
       }
 
-      .post-wrapper {
-        @include colored-box;
-        @include cool-box-shadow;
-        position: relative;
+      .sub {
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      .manifesto {
+        line-height: 1.5;
+      }
+    }
+
+    .acts {
+      display: grid;
+      grid-gap: 2rem 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+
+      .box {
+        background-color: $light-gray;
+        border-radius: $moderate-border-radius;
+        padding: 1rem;
         cursor: pointer;
-        margin-top: 1rem;
-
-        .post-link {
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: 0;
-          bottom: 0;
-        }
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-
-        .time {
-          display: block;
-          font-size: 0.8rem;
-          font-weight: 400;
-          color: $light-gray-text;
-          margin-top: 1rem;
-          text-align: right;
-        }
+        user-select: none;
 
         .title {
-          font-size: 1.2rem;
-          font-weight: 500;
+          color: $black-soft;
+          font-weight: 800;
         }
 
-        .subtitle {
-          font-size: 0.9rem;
-          font-weight: 400;
-          margin-top: 0.7rem;
-          color: $light-gray-text-dark;
+        .description {
+          color: $black-soft;
+          margin-top: 0.5rem;
         }
       }
     }
