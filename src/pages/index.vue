@@ -194,16 +194,25 @@
           </div>
           {% endfor %}
         </div>
-      </div> -->
+      </div>-->
     </div>
   </main>
 </template>
 
 <script>
 import anime from 'animejs'
+import axios from 'axios'
 
 export default {
   mounted() {
+    axios.get('http://localhost:4000/auth', {
+      params: {
+        APIKey: 'hello world'
+      }
+    })
+      .then(res => {
+        console.log(res.data)
+      })
     let homeContent = this.$el.querySelector('.home-content')
     let intro = document.querySelector('.intro')
 
@@ -276,142 +285,142 @@ export default {
 @import '~/assets/scss/global-mixins.scss';
 
 #home {
-	padding-top: 0;
-	width: calc(100% - #{$moderate-gap} * 2);
-	// max-width: 37rem;
-	margin: auto;
-	padding-bottom: $moderate-bottom;
+  padding-top: 0;
+  width: calc(100% - #{$moderate-gap} * 2);
+  // max-width: 37rem;
+  margin: auto;
+  padding-bottom: $moderate-bottom;
 
-	.intro {
-		text-align: center;
-		height: calc(100vh - #{$gn-height * 3});
-		min-height: 10rem;
-		display: flex;
-		transition: height 1s ease;
+  .intro {
+    text-align: center;
+    height: calc(100vh - #{$gn-height * 3});
+    min-height: 10rem;
+    display: flex;
+    transition: height 1s ease;
 
-		.name {
-			font-size: 2.5rem;
-		}
+    .name {
+      font-size: 2.5rem;
+    }
 
-		.path-container {
-			width: 20rem;
-			height: 3.1rem;
-			max-width: 90%;
-			position: relative;
-			margin: auto;
-			// z-index: -1;
+    .path-container {
+      width: 20rem;
+      height: 3.1rem;
+      max-width: 90%;
+      position: relative;
+      margin: auto;
+      // z-index: -1;
 
-			svg {
-				width: 100%;
-			}
+      svg {
+        width: 100%;
+      }
 
-			.jhaemin-path {
-				position: absolute;
-				left: 0;
-				top: 0;
-				opacity: 0;
-			}
+      .jhaemin-path {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+      }
 
-			.jhaemin-complete {
-				position: absolute;
-				left: 0;
-				top: 0;
-				opacity: 0;
+      .jhaemin-complete {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
 
-				&.reveal {
-					opacity: 1;
-				}
-			}
-		}
+        &.reveal {
+          opacity: 1;
+        }
+      }
+    }
 
-		.manifesto {
-			margin-top: 1rem;
-			font-size: 0.9rem;
-			color: #333;
-		}
-	}
+    .manifesto {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #333;
+    }
+  }
 
-	.home-content {
+  .home-content {
     opacity: 0;
     transition: opacity 0.5s ease;
-    
+
     &.show {
       opacity: 1;
     }
-	}
+  }
 
-	.home-block {
-		margin-bottom: $moderate-gap--vertical;
+  .home-block {
+    margin-bottom: $moderate-gap--vertical;
 
-		&:last-child {
-			margin-bottom: 0;
-		}
+    &:last-child {
+      margin-bottom: 0;
+    }
 
-		.sub {
-			font-size: 1.1rem;
-			font-weight: 700;
-		}
+    .sub {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
 
-		.manifesto {
-			line-height: 1.5;
-		}
-	}
+    .manifesto {
+      line-height: 1.5;
+    }
+  }
 
-	.recent-posts {
-		.post-container {
-			margin-top: 1rem;
+  .recent-posts {
+    .post-container {
+      margin-top: 1rem;
 
-			.preparing {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				font-size: 0.9rem;
-				color: darken($light-gray, 20%);
-				padding: 3rem 1.5rem;
-				@include bordered-box;
-			}
+      .preparing {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        color: darken($light-gray, 20%);
+        padding: 3rem 1.5rem;
+        @include bordered-box;
+      }
 
-			.post-wrapper {
-				@include colored-box;
-				@include cool-box-shadow;
-				position: relative;
-				cursor: pointer;
-				margin-top: 1rem;
+      .post-wrapper {
+        @include colored-box;
+        @include cool-box-shadow;
+        position: relative;
+        cursor: pointer;
+        margin-top: 1rem;
 
-				.post-link {
-					position: absolute;
-					left: 0;
-					right: 0;
-					top: 0;
-					bottom: 0;
-				}
-			
-				&:last-child {
-					margin-bottom: 0;
-				}
+        .post-link {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+        }
 
-				.time {
-					display: block;
-					font-size: 0.8rem;
-					font-weight: 400;
-					color: $light-gray-text;
-					margin-top: 1rem;
-					text-align: right;
-				}
-			
-				.title {
-					font-size: 1.2rem;
-					font-weight: 500;
-				}
-			
-				.subtitle {
-					font-size: 0.9rem;
-					font-weight: 400;
-					margin-top: 0.7rem;
-					color: $light-gray-text-dark;
-				}
-			}
-		}
-	}
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .time {
+          display: block;
+          font-size: 0.8rem;
+          font-weight: 400;
+          color: $light-gray-text;
+          margin-top: 1rem;
+          text-align: right;
+        }
+
+        .title {
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+
+        .subtitle {
+          font-size: 0.9rem;
+          font-weight: 400;
+          margin-top: 0.7rem;
+          color: $light-gray-text-dark;
+        }
+      }
+    }
+  }
 }
 </style>
