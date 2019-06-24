@@ -182,9 +182,9 @@
 @import "~/assets/scss/global-mixins.scss";
 
 #gallery {
-	width: 100%;
-	max-width: none;
-	padding: 0;
+	width: 100% !important;
+	max-width: none !important;
+	padding: 0 !important;
 
 	img {
 		display: block;
