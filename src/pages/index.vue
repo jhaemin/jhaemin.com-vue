@@ -204,16 +204,27 @@ import anime from 'animejs'
 import axios from 'axios'
 
 export default {
+  asyncData() {
+    return {
+      project: 'nuxt'
+    }
+  },
+  data() {
+    return {
+      project: 'default'
+    }
+  },
   mounted() {
-    axios
-      .get('http://localhost:4000/auth', {
-        params: {
-          APIKey: 'hello world'
-        }
-      })
-      .then(res => {
-        console.log(res.data)
-      })
+    console.log(this.project)
+    // axios
+    //   .get('http://localhost:4000/auth', {
+    //     params: {
+    //       APIKey: 'hello world'
+    //     }
+    //   })
+    //   .then(res => {
+    //     console.log(res.data)
+    //   })
     let homeContent = this.$el.querySelector('.home-content')
     let intro = document.querySelector('.intro')
 
@@ -286,7 +297,7 @@ export default {
 @import '~/assets/scss/global-mixins.scss';
 
 #home {
-  padding-top: 0;
+  padding-top: 0 !important;
   width: calc(100% - #{$moderate-gap} * 2);
   // max-width: 37rem;
   margin: auto;

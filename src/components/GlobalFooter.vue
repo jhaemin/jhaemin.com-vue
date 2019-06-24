@@ -1,7 +1,7 @@
 <template>
   <footer id="globalfooter" :class="{hidden: $store.state.gf.hidden}">
     <div class="wrapper">
-      <p class="copyright">&copy; 2019 Jang Haemin</p>
+      <p class="copyright">&copy; 2015-2019 Jang Haemin</p>
       <p class="payw-member">
         A member of
         <b class="payw">PAYW</b>
