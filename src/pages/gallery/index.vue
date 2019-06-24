@@ -201,7 +201,7 @@
 
 		.face-content {
 			position: relative;
-			top: - 3rem;
+			top: - 25px;
 		}
 
 		@keyframes ani-title {
