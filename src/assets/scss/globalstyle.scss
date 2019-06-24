@@ -5,7 +5,7 @@ html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
-	background: $light-gray;
+	background: #fff;
 	font-size: 100%;
 
 	&.light-mode {
@@ -23,12 +23,12 @@ html {
 
 @media only screen and (min-width: $width-stop--1) {
 	html {
-		font-size: 115%;
+		font-size: 110%;
 	}
 }
 @media only screen and (min-width: $width-stop--2) {
 	html {
-		font-size: 130%;
+		font-size: 120%;
 	}
 }
 
@@ -38,7 +38,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	-o-font-smoothing: antialiased;
 	font-family: $ff;
-	font-weight: 400;
+	font-weight: 500;
 	font-size: 17px;
 	margin: 0;
 	padding: 0;
