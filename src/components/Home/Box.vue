@@ -2,7 +2,7 @@
   <div class="box-origin">
     <div
       class="box"
-      :class="[boxStatus]"
+      :class="[boxStatus, {expand: expanded}]"
       @mouseenter="hoverBox"
       @mouseleave="releaseBox"
       @mousedown="pressBox"
@@ -42,7 +42,8 @@ export default {
   data() {
     return {
       boxStatus: '',
-      relaseTimeout: null
+      relaseTimeout: null,
+      expanded: false
     }
   },
   methods: {
@@ -71,9 +72,14 @@ export default {
       const windowHeight = window.innerHeight
       let transform = `translateX(${-left}px) translateY(${-top}px) scaleX(${windowWidth /
         width}) scaleY(${windowHeight / height})`
-      box.classList.add('expand')
+      this.expanded = true
       box.style.transformOrigin = '0px 0px'
       box.style.transform = transform
+
+      setTimeout(() => {
+        box.style = ''
+        this.expanded = false
+      }, 1000)
     }
   }
 }
@@ -105,7 +111,7 @@ export default {
   &.expand {
     transition: transform 0.4s ease, boder-radius 0.4s;
     border-radius: 0;
-    z-index: 999999;
+    z-index: 8888;
 
     .box-content {
       transition: opacity 0.2s;

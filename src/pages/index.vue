@@ -199,7 +199,7 @@
             <template v-slot:title>블로그</template>
             <template v-slot:description></template>
           </box>
-        </div> -->
+        </div>-->
         <div class="grid-item-wrapper">
           <box class="eodiro" box-external-link="https://eodiro.com">
             <template v-slot:title>어디로</template>
@@ -211,13 +211,13 @@
             <template v-slot:title>PolToday</template>
             <template v-slot:description>의무경찰 행정 관리 시스템</template>
           </box>
-        </div> -->
+        </div>-->
         <!-- <div class="grid-item-wrapper">
           <box class="poltoday" box-link="/">
             <template v-slot:title>WEBuffet</template>
             <template v-slot:description>웹사이트를 내맘대로</template>
           </box>
-        </div> -->
+        </div>-->
         <div class="grid-item-wrapper">
           <box class="github" box-external-link="https://github.com/jhaemin">
             <template v-slot:title>GitHub</template>
@@ -226,6 +226,8 @@
         </div>
       </div>
     </div>
+    
+    <nuxt-child class="popup"></nuxt-child>
   </main>
 </template>
 
@@ -243,7 +245,8 @@ export default {
   },
   data() {
     return {
-      project: 'default'
+      project: 'default',
+      popupEnabled: false
     }
   },
   mounted() {
@@ -336,7 +339,7 @@ export default {
     height: 50vh;
     min-height: 15rem;
     display: flex;
-    transition: height 1s ease;
+    // transition: height 1s ease;
 
     .name {
       font-size: 2.5rem;
@@ -399,5 +402,16 @@ export default {
       grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     }
   }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  z-index: 9999;
 }
 </style>
