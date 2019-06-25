@@ -44,7 +44,7 @@ export default {
     '~/assets/css/fonts.css',
     { src: '~/assets/scss/globalstyle.scss', lang: 'scss' }
   ],
-  transition: {
+  pageTransition: {
     name: 'fade',
     mode: 'out-in'
   },
