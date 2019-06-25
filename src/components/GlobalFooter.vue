@@ -1,7 +1,7 @@
 <template>
   <footer id="globalfooter" :class="{hidden: $store.state.gf.hidden}">
     <div class="wrapper">
-      <p class="text">&copy; 2015-{{ currentYear }} jhaemin.com</p>
+      <p class="text">&copy; 2015-{{ currentYear }} JHaemin.com</p>
     </div>
   </footer>
 </template>
@@ -27,7 +27,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: $gf-height;
-  color: lighten($black-soft, 50%);
+  // color: lighten($black-soft, 50%);
   text-align: center;
   user-select: none;
   cursor: default;
