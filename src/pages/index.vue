@@ -166,14 +166,21 @@
             ></path>
           </g>
         </svg>
+        <!-- When JavaScript is turned off -->
+        <noscript inline-template>
+          <img
+            src="~/assets/images/janghaemin.svg"
+            class="jhaemin-complete-noscript"
+            alt="Jang Haemin Logo"
+          >
+        </noscript>
       </div>
     </div>
 
     <div class="home-content">
-      <div class="home-block about-preview">
-        <h2 class="sub">👋 안녕하세요.</h2>
+      <div class="about-preview">
         <p class="manifesto">
-          개발자 장해민입니다.
+          🙋‍♂️ 안녕하세요, 개발자 장해민입니다.
           <br>중앙대학교에서 소프트웨어를 공부하고 있습니다.
           <br>팝송, 영화, 웹툰, 여행을 좋아합니다.
           <br>단순함과 정교함을 추구합니다.
@@ -181,24 +188,30 @@
       </div>
 
       <div class="acts">
-        <nuxt-link to="/gallery">
-          <div class="box gallery">
-            <h1 class="title">갤러리</h1>
-            <p class="description">작업과 디자인 철학을 만나보세요.</p>
-          </div>
-        </nuxt-link>
-        <div class="box blog">
-          <h1 class="title">블로그</h1>
-          <p class="description">기어코 내 글을 볼테야?</p>
-        </div>
-        <div class="box eodiro">
-          <h1 class="title">어디로</h1>
-          <p class="description">중앙대학교 학생이라면 반드시 써야 하는 필수 서비스!</p>
-        </div>
-        <div class="box github">
-          <h1 class="title">GitHub</h1>
-          <p class="description">github.com/jhaemin</p>
-        </div>
+        <box class="gallery" box-link="/gallery">
+          <template v-slot:title>갤러리</template>
+          <template v-slot:description>나의 눈부신 작업과 확고한 디자인 철학을 만나보세요.</template>
+        </box>
+        <!-- <box class="blog" box-link="/">
+          <template v-slot:title>블로그</template>
+          <template v-slot:description></template>
+        </box> -->
+        <box class="eodiro" box-external-link="https://eodiro.com">
+          <template v-slot:title>어디로</template>
+          <template v-slot:description>중대생이 만든 중대생을 위한 필수 서비스</template>
+        </box>
+        <!-- <box class="poltoday" box-link="/">
+          <template v-slot:title>PolToday</template>
+          <template v-slot:description>의무경찰 행정 관리 시스템</template>
+        </box>-->
+        <!-- <box class="poltoday" box-link="/">
+          <template v-slot:title>WEBuffet</template>
+          <template v-slot:description>웹사이트를 내맘대로</template>
+        </box>-->
+        <box class="github" box-external-link="https://github.com/jhaemin">
+          <template v-slot:title>GitHub</template>
+          <template v-slot:description>github.com/jhaemin</template>
+        </box>
       </div>
     </div>
   </main>
@@ -207,8 +220,10 @@
 <script>
 import anime from 'animejs'
 import axios from 'axios'
+import Box from '~/components/Home/Box.vue'
 
 export default {
+  components: { Box },
   asyncData() {
     return {
       project: 'nuxt'
@@ -305,6 +320,7 @@ export default {
 
   .intro {
     text-align: center;
+    padding-top: 1rem;
     height: calc(100vh - #{$gn-height * 3});
     height: 50vh;
     min-height: 15rem;
@@ -318,8 +334,13 @@ export default {
     .path-container {
       width: 20rem;
       height: 3.1rem;
+      width: 30rem;
+      height: 4.65rem;
+      width: 50rem;
+      height: 7.75rem;
       max-width: 90%;
       position: relative;
+      // top: 1rem;
       margin: auto;
       // z-index: -1;
 
@@ -344,6 +365,10 @@ export default {
           opacity: 1;
         }
       }
+
+      .jhaemin-complete-noscript {
+        width: 100%;
+      }
     }
 
     .manifesto {
@@ -354,45 +379,18 @@ export default {
   }
 
   .home-content {
-    .home-block {
-      margin-bottom: $moderate-gap--vertical;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      .sub {
-        font-size: 1.1rem;
-        font-weight: 700;
-      }
-
-      .manifesto {
-        line-height: 1.5;
-      }
+    .about-preview {
+      text-align: center;
+      // padding-bottom: 2rem;
     }
 
     .acts {
+      max-width: 85rem;
+      margin: auto;
+      margin-top: 5rem;
       display: grid;
-      grid-gap: 2rem 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-
-      .box {
-        background-color: $light-gray;
-        border-radius: $moderate-border-radius;
-        padding: 1rem;
-        cursor: pointer;
-        user-select: none;
-
-        .title {
-          color: $black-soft;
-          font-weight: 800;
-        }
-
-        .description {
-          color: $black-soft;
-          margin-top: 0.5rem;
-        }
-      }
+      grid-gap: $moderate-gap $moderate-gap;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     }
   }
 }
