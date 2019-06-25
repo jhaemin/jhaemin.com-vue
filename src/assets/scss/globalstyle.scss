@@ -45,12 +45,16 @@ body {
 	word-wrap: break-word;
 	word-break: keep-all;
 	color: $black-soft;
-	background: #fff;
+	background-color: $light-gray;
 
 	.dark-mode & {
 		color: #fff;
 		background: #222;
 	}
+}
+
+main {
+	min-height: calc(100vh - #{$gf-height});
 }
 
 * {
