@@ -237,6 +237,7 @@ import axios from 'axios'
 import Box from '~/components/Home/Box.vue'
 
 export default {
+  scrollToTop: false,
   components: { Box },
   asyncData() {
     return {
