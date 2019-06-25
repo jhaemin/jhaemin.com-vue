@@ -187,3 +187,11 @@ button.jhm-btn {
 		// }
 	}
 }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 400ms ease !important;
+  opacity: 1 !important;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0 !important;
+}

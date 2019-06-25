@@ -44,6 +44,10 @@ export default {
     '~/assets/css/fonts.css',
     { src: '~/assets/scss/globalstyle.scss', lang: 'scss' }
   ],
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
+  },
   build: {
     publicPath: '/dist/'
   }
