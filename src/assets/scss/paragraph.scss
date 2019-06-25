@@ -2,7 +2,7 @@
 
 p {
 	font-size: 0.92rem;
-	line-height: 1.5 !important;
+	line-height: 1.5;
 }
 
 h1, h2, h3 {
@@ -101,7 +101,7 @@ pre {
 		display: block;
 		margin: 2rem 0;
 		color: inherit;
-		padding: $moderate-gap !important;
+		padding: $moderate-gap;
 		border-radius: $moderate-border-radius;
 		overflow: hidden;
 		white-space: inherit;
