@@ -1,5 +1,8 @@
 <template>
   <main id="gallery">
+		<button class="close">
+			<nuxt-link to="/" class="expanded"></nuxt-link>
+		</button>
     <div class="face">
       <div class="face-content">
         <h1 class="title" data-aos="fade-up">갤러리에 오신 것을 환영합니다.</h1>
@@ -180,6 +183,7 @@
 
 <style lang="scss" scoped>
 @import "~/assets/scss/global-mixins.scss";
+@import "~/assets/scss/global-variables.scss";
 
 #gallery {
 	background-color: #fff;
@@ -191,11 +195,41 @@
 		display: block;
 	}
 
+	.close {
+		position: fixed;
+		right: $moderate-gap;
+		top: $moderate-gap;
+		width: 2.5rem;
+		height: 2.5rem;
+		background-color: $light-gray;
+		border: none;
+		border-radius: 50%;
+		z-index: 9999;
+
+		&::before, &::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			display: inline-block;
+			background-color: darken($light-gray, 50%);
+			width: 0.2rem;
+			height: 1.2rem;
+			border-radius: 50px;
+		}
+		&::before {
+			transform: translateX(-50%) translateY(-50%) rotate(45deg);
+		}
+		&::after {
+			transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+		}
+	}
+
 	.face {
 		text-align: center;
 		width: calc(100% - #{$moderate-gap * 2});
 		margin: auto;
-		height: calc(100vh - #{$gn-height});
+		height: 100vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
