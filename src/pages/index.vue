@@ -180,7 +180,7 @@
     <div class="home-content">
       <div class="about-preview">
         <p class="manifesto">
-          🙋‍♂️ 안녕하세요, 개발자 장해민입니다.
+          🙋‍♂️ 안녕하세요! 개발자 장해민입니다.
           <br>중앙대학교에서 소프트웨어를 공부하고 있습니다.
           <br>팝송, 영화, 웹툰, 여행을 좋아합니다.
           <br>단순함과 정교함을 추구합니다.
@@ -188,30 +188,42 @@
       </div>
 
       <div class="acts">
-        <box class="gallery" box-link="/gallery">
-          <template v-slot:title>갤러리</template>
-          <template v-slot:description>나의 눈부신 작업과 확고한 디자인 철학을 만나보세요.</template>
-        </box>
-        <!-- <box class="blog" box-link="/">
-          <template v-slot:title>블로그</template>
-          <template v-slot:description></template>
-        </box> -->
-        <box class="eodiro" box-external-link="https://eodiro.com">
-          <template v-slot:title>어디로</template>
-          <template v-slot:description>중대생이 만든 중대생을 위한 필수 서비스</template>
-        </box>
-        <!-- <box class="poltoday" box-link="/">
-          <template v-slot:title>PolToday</template>
-          <template v-slot:description>의무경찰 행정 관리 시스템</template>
-        </box>-->
-        <!-- <box class="poltoday" box-link="/">
-          <template v-slot:title>WEBuffet</template>
-          <template v-slot:description>웹사이트를 내맘대로</template>
-        </box>-->
-        <box class="github" box-external-link="https://github.com/jhaemin">
-          <template v-slot:title>GitHub</template>
-          <template v-slot:description>github.com/jhaemin</template>
-        </box>
+        <div class="grid-item-wrapper">
+          <box class="gallery" box-link="/gallery">
+            <template v-slot:title>갤러리</template>
+            <template v-slot:description>나의 눈부신 작업과 확고한 디자인 철학을 만나보세요.</template>
+          </box>
+        </div>
+        <!-- <div class="grid-item-wrapper">
+          <box class="blog" box-link="/">
+            <template v-slot:title>블로그</template>
+            <template v-slot:description></template>
+          </box>
+        </div> -->
+        <div class="grid-item-wrapper">
+          <box class="eodiro" box-external-link="https://eodiro.com">
+            <template v-slot:title>어디로</template>
+            <template v-slot:description>중대생이 만든 중대생을 위한 필수 서비스</template>
+          </box>
+        </div>
+        <!-- <div class="grid-item-wrapper">
+          <box class="poltoday" box-link="/">
+            <template v-slot:title>PolToday</template>
+            <template v-slot:description>의무경찰 행정 관리 시스템</template>
+          </box>
+        </div> -->
+        <!-- <div class="grid-item-wrapper">
+          <box class="poltoday" box-link="/">
+            <template v-slot:title>WEBuffet</template>
+            <template v-slot:description>웹사이트를 내맘대로</template>
+          </box>
+        </div> -->
+        <div class="grid-item-wrapper">
+          <box class="github" box-external-link="https://github.com/jhaemin">
+            <template v-slot:title>GitHub</template>
+            <template v-slot:description>github.com/jhaemin</template>
+          </box>
+        </div>
       </div>
     </div>
   </main>
@@ -320,7 +332,6 @@ export default {
 
   .intro {
     text-align: center;
-    padding-top: 1rem;
     height: calc(100vh - #{$gn-height * 3});
     height: 50vh;
     min-height: 15rem;
@@ -332,12 +343,7 @@ export default {
     }
 
     .path-container {
-      width: 20rem;
-      height: 3.1rem;
-      width: 30rem;
-      height: 4.65rem;
       width: 50rem;
-      height: 7.75rem;
       max-width: 90%;
       position: relative;
       // top: 1rem;
@@ -349,7 +355,7 @@ export default {
       }
 
       .jhaemin-path {
-        position: absolute;
+        // position: absolute;
         left: 0;
         top: 0;
         opacity: 0;
