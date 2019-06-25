@@ -234,8 +234,8 @@
 	}
 
 	.gallery-section {
-		padding: $moderate-gap;
-		margin: 50vh 0;
+		padding: 25vh $moderate-gap;
+		// margin: 50vh 0;
 
 		.section-title {
       font-weight: 800;
