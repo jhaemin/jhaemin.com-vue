@@ -1,10 +1,21 @@
 <template>
   <footer id="globalfooter" :class="{hidden: $store.state.gf.hidden}">
     <div class="wrapper">
-      <p class="text">&copy; 2015-2019 Jang Haemin</p>
+      <p class="text">&copy; 2015-{{ currentYear }} jhaemin.com</p>
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      currentYear: new Date().getFullYear()
+    }
+  }
+}
+</script>
+
 
 <style lang="scss" scoped>
 @import '~/assets/scss/global-variables.scss';
@@ -28,7 +39,7 @@
 
   .wrapper {
     .text {
-      font-size: 12px;
+      font-size: 0.8rem;
     }
   }
 }
