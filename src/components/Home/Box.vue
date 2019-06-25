@@ -1,26 +1,37 @@
 <template>
-  <div class="grid-item-wrapper">
+  <div class="box-origin">
     <div
       class="box"
-      :class="boxStatus"
-      @mousedown="boxStatus='pressed'"
-      @mouseup="boxStatus=''"
-      @mouseleave="boxStatus=''"
-      @touchstart="boxStatus='pressed'"
+      :class="[boxStatus]"
+      @mouseenter="hoverBox"
+      @mouseleave="releaseBox"
+      @mousedown="pressBox"
+      @mouseup="releaseBox"
+      @touchstart="pressBox"
+      @touchend="releaseBox"
+      @dragstart="$event.preventDefault()"
     >
-      <nuxt-link v-if="boxLink" :to="boxLink ? boxLink : '/'" class="link"></nuxt-link>
+      <nuxt-link
+        :event="'click'"
+        v-if="boxLink"
+        :to="boxLink ? boxLink : '/'"
+        class="link"
+        @click.native="expandBox"
+      ></nuxt-link>
       <a
         :href="boxExternalLink ? boxExternalLink : ''"
         v-else-if="boxExternalLink"
         target="_blank"
         class="link"
       ></a>
-      <h1 class="title">
-        <slot name="title"></slot>
-      </h1>
-      <p class="description">
-        <slot name="description"></slot>
-      </p>
+      <div class="box-content">
+        <h1 class="title">
+          <slot name="title"></slot>
+        </h1>
+        <p class="description">
+          <slot name="description"></slot>
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -30,12 +41,39 @@ export default {
   props: ['boxLink', 'boxExternalLink'],
   data() {
     return {
-      boxStatus: ''
+      boxStatus: '',
+      relaseTimeout: null
     }
   },
   methods: {
-    touchStart(e) {
+    hoverBox() {
+      this.boxStatus = 'hovered'
+    },
+    pressBox() {
       this.boxStatus = 'pressed'
+      this.relaseTimeout = setTimeout(() => {
+        this.boxStatus = ''
+      }, 1500)
+    },
+    releaseBox() {
+      clearTimeout(this.relaseTimeout)
+      this.boxStatus = ''
+    },
+    expandBox() {
+      const el = this.$el
+      const box = el.querySelector('.box')
+      const rect = el.getBoundingClientRect()
+      const left = rect.left
+      const top = rect.top
+      const width = rect.width
+      const windowWidth = window.innerWidth
+      const height = rect.height
+      const windowHeight = window.innerHeight
+      let transform = `translateX(${-left}px) translateY(${-top}px) scaleX(${windowWidth /
+        width}) scaleY(${windowHeight / height})`
+      box.classList.add('expand')
+      box.style.transformOrigin = '0px 0px'
+      box.style.transform = transform
     }
   }
 }
@@ -60,11 +98,23 @@ export default {
   }
 
   &.pressed {
-    transform: scale(0.9);
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    transform: scale(0.92);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+
+  &.expand {
+    transition: transform 0.4s ease, boder-radius 0.4s;
+    border-radius: 0;
+    z-index: 999999;
+
+    .box-content {
+      transition: opacity 0.2s;
+      opacity: 0;
+    }
   }
 
   .link {
+    user-select: none;
     -webkit-touch-callout: none;
     position: absolute;
     top: 0;
