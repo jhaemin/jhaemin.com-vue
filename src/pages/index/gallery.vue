@@ -1,8 +1,10 @@
 <template>
   <main id="gallery">
-		<button class="close">
-			<nuxt-link to="/" class="expanded"></nuxt-link>
-		</button>
+		<div class="close-wrapper">
+			<button class="close">
+				<nuxt-link to="/" class="expanded"></nuxt-link>
+			</button>
+		</div>
     <div class="face">
       <div class="face-content">
         <h1 class="title" data-aos="fade-up">갤러리에 오신 것을 환영합니다.</h1>
@@ -181,6 +183,24 @@
   </main>
 </template>
 
+<script>
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
+import scrollLock from 'scroll-lock'
+
+export default {
+	mounted() {
+		// disableBodyScroll(this.$el)
+		scrollLock.disablePageScroll(this.$el)
+	},
+	beforeDestroy() {
+		// enableBodyScroll(this.$el)
+		// clearAllBodyScrollLocks()
+		scrollLock.enablePageScroll(this.$el)
+	}
+}
+</script>
+
+
 <style lang="scss" scoped>
 @import "~/assets/scss/global-mixins.scss";
 @import "~/assets/scss/global-variables.scss";
@@ -195,33 +215,39 @@
 		display: block;
 	}
 
-	.close {
-		position: fixed;
+	.close-wrapper {
+		position: sticky;
 		right: $moderate-gap;
 		top: $moderate-gap;
 		width: 2.5rem;
 		height: 2.5rem;
-		background-color: $light-gray;
-		border: none;
-		border-radius: 50%;
-		z-index: 9999;
+		margin-left: auto;
 
-		&::before, &::after {
-			content: '';
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			display: inline-block;
-			background-color: darken($light-gray, 50%);
-			width: 0.2rem;
-			height: 1.2rem;
-			border-radius: 50px;
-		}
-		&::before {
-			transform: translateX(-50%) translateY(-50%) rotate(45deg);
-		}
-		&::after {
-			transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+		.close {
+			width: 100%;
+			height: 100%;
+			background-color: $light-gray;
+			border: none;
+			border-radius: 50%;
+			z-index: 9999;
+		
+			&::before, &::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				display: inline-block;
+				background-color: darken($light-gray, 50%);
+				width: 0.2rem;
+				height: 1.2rem;
+				border-radius: 50px;
+			}
+			&::before {
+				transform: translateX(-50%) translateY(-50%) rotate(45deg);
+			}
+			&::after {
+				transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+			}
 		}
 	}
 
@@ -236,7 +262,7 @@
 
 		.face-content {
 			position: relative;
-			top: - 25px;
+			top: -3rem;
 		}
 
 		@keyframes ani-title {

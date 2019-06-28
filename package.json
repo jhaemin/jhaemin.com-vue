@@ -13,7 +13,9 @@
   "dependencies": {
     "animejs": "^3.0.1",
     "axios": "^0.19.0",
-    "nuxt": "^2.8.1"
+    "body-scroll-lock": "^2.6.3",
+    "nuxt": "^2.8.1",
+    "scroll-lock": "^2.1.2"
   },
   "devDependencies": {
     "node-sass": "^4.12.0",
