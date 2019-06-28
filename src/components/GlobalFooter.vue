@@ -21,12 +21,17 @@ export default {
 @import '~/assets/scss/global-variables.scss';
 
 #globalfooter {
+  // position: fixed;
+  // bottom: 0;
+  // left: 0;
+  // width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   align-items: center;
   justify-content: center;
   height: $gf-height;
+  background-color: $light-gray;
   // color: lighten($black-soft, 50%);
   text-align: center;
   user-select: none;
