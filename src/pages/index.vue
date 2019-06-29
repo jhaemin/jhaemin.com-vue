@@ -394,6 +394,7 @@ export default {
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
   overflow-y: auto;
+  backface-visibility: hidden;
   z-index: 9999;
 }
 </style>
