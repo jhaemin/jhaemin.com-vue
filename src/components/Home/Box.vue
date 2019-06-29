@@ -73,13 +73,20 @@ export default {
       let transform = `translateX(${-left}px) translateY(${-top}px) scaleX(${windowWidth /
         width}) scaleY(${windowHeight / height})`
       this.expanded = true
+      // box.style.transition = 'transform 400ms ease, border-radius 400ms'
+      // box.style.borderRadius = '0'
+      // box.style.zIndex = '8888'
       box.style.transformOrigin = '0px 0px'
       box.style.transform = transform
 
       setTimeout(() => {
-        box.style = ''
+        box.style.transition = 'none'
+        box.style.transform = ''
         this.expanded = false
-      }, 1000)
+        setTimeout(() => {
+          box.style = ''
+        }, 10)
+      }, 800)
     }
   }
 }
@@ -93,7 +100,7 @@ export default {
   position: relative;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  border-radius: $moderate-border-radius;
+  border-radius: 0.8rem;
   padding: 1.2rem;
   cursor: pointer;
   user-select: none;

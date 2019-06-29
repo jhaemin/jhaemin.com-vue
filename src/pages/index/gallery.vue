@@ -1,185 +1,187 @@
 <template>
   <main id="gallery">
-		<div class="close-wrapper">
-			<button class="close">
-				<nuxt-link to="/" class="expanded"></nuxt-link>
-			</button>
+		<div class="content">
+			<div class="close-wrapper">
+				<button class="close">
+					<nuxt-link to="/" class="expanded"></nuxt-link>
+				</button>
+			</div>
+			<div class="face">
+				<div class="face-content">
+					<h1 class="title" data-aos="fade-up">갤러리에 오신 것을 환영합니다.</h1>
+					<p class="manifesto">이 곳에서 나의 눈부신 작업과 확고한 디자인 철학을 만나보세요.</p>
+				</div>
+			</div>
+			
+			<section class="gallery-section logo-history">
+				<h1 class="section-title">JHM DELEGATION</h1>
+			
+				<img
+					class="jhm-logo-history-img"
+					src="~/assets/images/gallery/logo-history.svg"
+					alt="jhm-logo-history"
+					data-appearance-mode="light"
+				>
+				<img
+					class="jhm-logo-history-img"
+					src="~/assets/images/gallery/logo-history_dark.svg"
+					alt="jhm-logo-history"
+					data-appearance-mode="dark"
+				>
+			
+				<p
+					class="section-manifesto"
+				>영문 이름(Jang Hae Min, 장해민)의 앞 글자를 따서 탄생한 로고입니다. 단순한 알파벳에서 현재 경로(current directory)를 의미하는 "./"로 J를 형상화하였고, 2019년에 squircle을 적용했습니다.</p>
+			</section>
+			
+			<section class="gallery-section ui-ux">
+				<h1 class="section-title">UI AND UX</h1>
+				<p
+					class="section-manifesto sm-ui-ux"
+				>잘 디자인된 인터페이스는 그 복잡도와 관계없이, 자세한 설명 없이도 사용할 수 있어야 합니다. 적절한 속도와 부드럽게 다듬어진 애니메이션은 UI의 변화를 시각적으로 표현하여 재미와 중독성을 유발합니다.</p>
+				<img class="input-ui-img" src="~/assets/images/gallery/input-ui.gif" alt="input-ui-image">
+			
+				<img class="search-ui-img" src="~/assets/images/gallery/search-ui.gif" alt="search-ui-image">
+			</section>
+			
+			<section class="gallery-section logo-design">
+				<h1 class="section-title">LOGOS AND ICONS</h1>
+				<p class="section-manifesto sm-ld">뛰어난 함축성과 간결한 형태는 보는 이로 하여금 호기심을 자극하고 애착이 가게 만듭니다.</p>
+				<div class="icon-container">
+					<div class="icon-item">
+						<div class="icon-img-wrapper">
+							<img src="~/assets/images/gallery/icons/payw.png" alt data-appearance-mode="light">
+							<img src="~/assets/images/gallery/icons/payw_dark.png" alt data-appearance-mode="dark">
+						</div>
+						<span class="icon-name">Payw</span>
+					</div>
+			
+					<div class="icon-item">
+						<div class="icon-img-wrapper">
+							<img
+								class="pvm-img"
+								src="~/assets/images/gallery/icons/povium.png"
+								alt
+								data-appearance-mode="light"
+							>
+							<img
+								class="pvm-img"
+								src="~/assets/images/gallery/icons/povium_dark.png"
+								alt
+								data-appearance-mode="dark"
+							>
+						</div>
+						<span class="icon-name">Povium</span>
+					</div>
+			
+					<div class="icon-item">
+						<div class="icon-img-wrapper">
+							<img
+								class="bj-img"
+								src="~/assets/images/gallery/icons/banyanjade.png"
+								alt
+								data-appearance-mode="light"
+							>
+							<img
+								class="bj-img"
+								src="~/assets/images/gallery/icons/banyanjade_dark.png"
+								alt
+								data-appearance-mode="dark"
+							>
+						</div>
+						<span class="icon-name">BanyanJade</span>
+					</div>
+				</div>
+			
+				<div class="cassandra-icon-pack">
+					<div class="icon-wrapper">
+						<img src="~/assets/images/gallery/cassandra-icon-pack/weight.png" alt style="width: 95%;">
+					</div>
+					<div class="icon-wrapper">
+						<img src="~/assets/images/gallery/cassandra-icon-pack/time.png" alt style="width: 82%;">
+					</div>
+					<div class="icon-wrapper">
+						<img
+							src="~/assets/images/gallery/cassandra-icon-pack/normal.png"
+							alt
+							style="width: 95%; position: relative; top: -0.3rem;"
+						>
+					</div>
+					<div class="icon-wrapper">
+						<img
+							src="~/assets/images/gallery/cassandra-icon-pack/exponential.png"
+							alt
+							style="width: 95%; position: relative; top: -0.3rem;"
+						>
+					</div>
+					<div class="icon-wrapper">
+						<img
+							src="~/assets/images/gallery/cassandra-icon-pack/graph.png"
+							alt
+							style="width: 95%; position: relative; top: -0.3rem;"
+						>
+					</div>
+					<div class="icon-wrapper">
+						<img src="~/assets/images/gallery/cassandra-icon-pack/bst.png" alt style="width: 95%;">
+					</div>
+					<div class="icon-wrapper">
+						<img src="~/assets/images/gallery/cassandra-icon-pack/genre.png" alt style="width: 80%;">
+					</div>
+					<div class="icon-wrapper">
+						<img src="~/assets/images/gallery/cassandra-icon-pack/box.png" alt>
+					</div>
+					<div class="icon-wrapper">
+						<img src="~/assets/images/gallery/cassandra-icon-pack/megaphone.png" alt>
+					</div>
+					<div class="icon-wrapper">
+						<img src="~/assets/images/gallery/cassandra-icon-pack/cpu.png" alt style="width: 80%;">
+					</div>
+				</div>
+				<span class="copyright-declaration">모든 디자인은 Jang Haemin에게 권리가 있습니다.</span>
+			</section>
+			
+			<section class="gallery-section business-card">
+				<h1 class="section-title">BUSINESS CARDS</h1>
+				<p class="section-manifesto">명함에 많은 정보는 필요없습니다. 지갑에서 다시 꺼내보고싶게 유혹할 뿐입니다.</p>
+				<img class="sarah-cookie-img" src="~/assets/images/gallery/sarah-cookie.png" alt>
+				<img class="sarah-cookie-img" src="~/assets/images/gallery/jhaemin-card.png" alt>
+				<img class="sarah-cookie-img" src="~/assets/images/gallery/accordando-card.png" alt>
+			</section>
+			
+			<section class="gallery-section artworks">
+				<h1 class="section-title">ARTWORKS</h1>
+				<div class="artworks-container">
+					<div class="artwork-item curseware">
+						<img src="~/assets/images/gallery/artworks/curseware-poster.png" alt>
+					</div>
+			
+					<div class="artwork-item wine">
+						<img src="~/assets/images/gallery/artworks/wine.png" alt>
+					</div>
+			
+					<div class="artwork-item edu-objects">
+						<img src="~/assets/images/gallery/artworks/edu-objects.png" alt>
+					</div>
+			
+					<div class="artwork-item desk">
+						<img src="~/assets/images/gallery/artworks/desk.jpg" alt>
+					</div>
+				</div>
+			</section>
+			
+			<section class="gallery-section three-dimension">
+				<h1 class="section-title">3D BADGE DESIGN</h1>
+				<p class="section-manifesto sm-td">2016년에 채택된 중앙대학교 컴퓨터공학부(소프트웨어학부) 대표 배지입니다.</p>
+				<div class="render-image-container">
+					<div class="layout-1">
+						<img class="rendered-img" src="~/assets/images/gallery/badge/rendered_far.jpg" alt>
+					</div>
+					<div class="layout-2">
+						<img class="rendered-img" src="~/assets/images/gallery/badge/rendered_left.jpg" alt>
+					</div>
+				</div>
+			</section>
 		</div>
-    <div class="face">
-      <div class="face-content">
-        <h1 class="title" data-aos="fade-up">갤러리에 오신 것을 환영합니다.</h1>
-        <p class="manifesto">이 곳에서 나의 눈부신 작업과 확고한 디자인 철학을 만나보세요.</p>
-      </div>
-    </div>
-
-    <section class="gallery-section logo-history">
-      <h1 class="section-title">JHM DELEGATION</h1>
-
-      <img
-        class="jhm-logo-history-img"
-        src="~/assets/images/gallery/logo-history.svg"
-        alt="jhm-logo-history"
-        data-appearance-mode="light"
-      >
-      <img
-        class="jhm-logo-history-img"
-        src="~/assets/images/gallery/logo-history_dark.svg"
-        alt="jhm-logo-history"
-        data-appearance-mode="dark"
-      >
-
-      <p
-        class="section-manifesto"
-      >영문 이름(Jang Hae Min, 장해민)의 앞 글자를 따서 탄생한 로고입니다. 단순한 알파벳에서 현재 경로(current directory)를 의미하는 "./"로 J를 형상화하였고, 2019년에 squircle을 적용했습니다.</p>
-    </section>
-
-    <section class="gallery-section ui-ux">
-      <h1 class="section-title">UI AND UX</h1>
-      <p
-        class="section-manifesto sm-ui-ux"
-      >잘 디자인된 인터페이스는 그 복잡도와 관계없이, 자세한 설명 없이도 사용할 수 있어야 합니다. 적절한 속도와 부드럽게 다듬어진 애니메이션은 UI의 변화를 시각적으로 표현하여 재미와 중독성을 유발합니다.</p>
-      <img class="input-ui-img" src="~/assets/images/gallery/input-ui.gif" alt="input-ui-image">
-
-      <img class="search-ui-img" src="~/assets/images/gallery/search-ui.gif" alt="search-ui-image">
-    </section>
-
-    <section class="gallery-section logo-design">
-      <h1 class="section-title">LOGOS AND ICONS</h1>
-      <p class="section-manifesto sm-ld">뛰어난 함축성과 간결한 형태는 보는 이로 하여금 호기심을 자극하고 애착이 가게 만듭니다.</p>
-      <div class="icon-container">
-        <div class="icon-item">
-          <div class="icon-img-wrapper">
-            <img src="~/assets/images/gallery/icons/payw.png" alt data-appearance-mode="light">
-            <img src="~/assets/images/gallery/icons/payw_dark.png" alt data-appearance-mode="dark">
-          </div>
-          <span class="icon-name">Payw</span>
-        </div>
-
-        <div class="icon-item">
-          <div class="icon-img-wrapper">
-            <img
-              class="pvm-img"
-              src="~/assets/images/gallery/icons/povium.png"
-              alt
-              data-appearance-mode="light"
-            >
-            <img
-              class="pvm-img"
-              src="~/assets/images/gallery/icons/povium_dark.png"
-              alt
-              data-appearance-mode="dark"
-            >
-          </div>
-          <span class="icon-name">Povium</span>
-        </div>
-
-        <div class="icon-item">
-          <div class="icon-img-wrapper">
-            <img
-              class="bj-img"
-              src="~/assets/images/gallery/icons/banyanjade.png"
-              alt
-              data-appearance-mode="light"
-            >
-            <img
-              class="bj-img"
-              src="~/assets/images/gallery/icons/banyanjade_dark.png"
-              alt
-              data-appearance-mode="dark"
-            >
-          </div>
-          <span class="icon-name">BanyanJade</span>
-        </div>
-      </div>
-
-      <div class="cassandra-icon-pack">
-        <div class="icon-wrapper">
-          <img src="~/assets/images/gallery/cassandra-icon-pack/weight.png" alt style="width: 95%;">
-        </div>
-        <div class="icon-wrapper">
-          <img src="~/assets/images/gallery/cassandra-icon-pack/time.png" alt style="width: 82%;">
-        </div>
-        <div class="icon-wrapper">
-          <img
-            src="~/assets/images/gallery/cassandra-icon-pack/normal.png"
-            alt
-            style="width: 95%; position: relative; top: -0.3rem;"
-          >
-        </div>
-        <div class="icon-wrapper">
-          <img
-            src="~/assets/images/gallery/cassandra-icon-pack/exponential.png"
-            alt
-            style="width: 95%; position: relative; top: -0.3rem;"
-          >
-        </div>
-        <div class="icon-wrapper">
-          <img
-            src="~/assets/images/gallery/cassandra-icon-pack/graph.png"
-            alt
-            style="width: 95%; position: relative; top: -0.3rem;"
-          >
-        </div>
-        <div class="icon-wrapper">
-          <img src="~/assets/images/gallery/cassandra-icon-pack/bst.png" alt style="width: 95%;">
-        </div>
-        <div class="icon-wrapper">
-          <img src="~/assets/images/gallery/cassandra-icon-pack/genre.png" alt style="width: 80%;">
-        </div>
-        <div class="icon-wrapper">
-          <img src="~/assets/images/gallery/cassandra-icon-pack/box.png" alt>
-        </div>
-        <div class="icon-wrapper">
-          <img src="~/assets/images/gallery/cassandra-icon-pack/megaphone.png" alt>
-        </div>
-        <div class="icon-wrapper">
-          <img src="~/assets/images/gallery/cassandra-icon-pack/cpu.png" alt style="width: 80%;">
-        </div>
-      </div>
-      <span class="copyright-declaration">모든 디자인은 Jang Haemin에게 권리가 있습니다.</span>
-    </section>
-
-    <section class="gallery-section business-card">
-      <h1 class="section-title">BUSINESS CARDS</h1>
-      <p class="section-manifesto">명함에 많은 정보는 필요없습니다. 지갑에서 다시 꺼내보고싶게 유혹할 뿐입니다.</p>
-      <img class="sarah-cookie-img" src="~/assets/images/gallery/sarah-cookie.png" alt>
-      <img class="sarah-cookie-img" src="~/assets/images/gallery/jhaemin-card.png" alt>
-      <img class="sarah-cookie-img" src="~/assets/images/gallery/accordando-card.png" alt>
-    </section>
-
-    <section class="gallery-section artworks">
-      <h1 class="section-title">ARTWORKS</h1>
-      <div class="artworks-container">
-        <div class="artwork-item curseware">
-          <img src="~/assets/images/gallery/artworks/curseware-poster.png" alt>
-        </div>
-
-        <div class="artwork-item wine">
-          <img src="~/assets/images/gallery/artworks/wine.png" alt>
-        </div>
-
-        <div class="artwork-item edu-objects">
-          <img src="~/assets/images/gallery/artworks/edu-objects.png" alt>
-        </div>
-
-        <div class="artwork-item desk">
-          <img src="~/assets/images/gallery/artworks/desk.jpg" alt>
-        </div>
-      </div>
-    </section>
-
-    <section class="gallery-section three-dimension">
-      <h1 class="section-title">3D BADGE DESIGN</h1>
-      <p class="section-manifesto sm-td">2016년에 채택된 중앙대학교 컴퓨터공학부(소프트웨어학부) 대표 배지입니다.</p>
-      <div class="render-image-container">
-        <div class="layout-1">
-          <img class="rendered-img" src="~/assets/images/gallery/badge/rendered_far.jpg" alt>
-        </div>
-        <div class="layout-2">
-          <img class="rendered-img" src="~/assets/images/gallery/badge/rendered_left.jpg" alt>
-        </div>
-      </div>
-    </section>
   </main>
 </template>
 
@@ -189,13 +191,23 @@ import scrollLock from 'scroll-lock'
 
 export default {
 	mounted() {
-		// disableBodyScroll(this.$el)
-		scrollLock.disablePageScroll(this.$el)
+		// scrollLock.disablePageScroll(this.$el)
 	},
 	beforeDestroy() {
-		// enableBodyScroll(this.$el)
-		// clearAllBodyScrollLocks()
-		scrollLock.enablePageScroll(this.$el)
+		// scrollLock.enablePageScroll(this.$el)
+		this.$el.style.transition = 'transform 400ms ease, opacity 400ms ease, border-radius 400ms ease'
+		this.$el.style.transformOrigin = '0 0'
+		let origin = document.querySelector('.box-origin.gallery')
+		let rect = origin.getBoundingClientRect()
+		let top = rect.top
+		let left = rect.left
+		let width = rect.width
+		let height = rect.height
+		this.$el.style.transform = `translateX(${left}px) translateY(${top}px) scaleX(${width/this.$el.getBoundingClientRect().width}) scaleY(${height/this.$el.getBoundingClientRect().height})`
+		this.$el.style.borderRadius = '50px'
+		const contentElm = this.$el.querySelector('.content')
+		contentElm.style.transition = 'opacity 400ms ease'
+		contentElm.style.opacity = '0'
 	}
 }
 </script>
