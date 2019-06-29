@@ -190,16 +190,24 @@ button.jhm-btn {
 }
 
 .fade-enter-active {
+	transition: opacity 400ms ease;
 	transition-delay: 400ms !important;
 }
-
-.fade-enter-active, .fade-leave-active {
-	transition: opacity 400ms ease;
-	
-  opacity: 1;
+.fade-enter {
+	opacity: 0;
 }
-.fade-enter, .fade-leave-to {
-  opacity: 0;
+.fade-enter-to {
+	opacity: 1;
+}
+.fade-leave {
+	opacity: 1;
+}
+.fade-leave-active {
+	transition: opacity 400ms ease;
+	// transition-delay: 400ms !important;
+}
+.fade-leave-to {
+	// opacity: 0;
 }
 
 // ::-webkit-scrollbar {
