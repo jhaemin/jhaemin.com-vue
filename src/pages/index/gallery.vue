@@ -191,10 +191,10 @@ import scrollLock from 'scroll-lock'
 
 export default {
 	mounted() {
-		// scrollLock.disablePageScroll(this.$el)
+		scrollLock.disablePageScroll(this.$el)
 	},
 	beforeDestroy() {
-		// scrollLock.enablePageScroll(this.$el)
+		scrollLock.enablePageScroll(this.$el)
 		this.$el.style.transition = 'transform 400ms ease, opacity 400ms ease, border-radius 400ms ease'
 		this.$el.style.transformOrigin = '0 0'
 		let origin = document.querySelector('.box-origin.gallery')
