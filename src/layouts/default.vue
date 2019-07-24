@@ -1,7 +1,7 @@
 <template>
-  <div id="default-layout">
-    <nuxt class="main"/>
-    <GlobalFooter/>
+  <div id="jhm-web">
+    <nuxt class="main" />
+    <GlobalFooter />
   </div>
 </template>
 

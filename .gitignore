@@ -82,7 +82,7 @@ dist
 
 # IDE / Editor
 .idea
-.vscode
+.vscode/sftp.json
 
 # Service worker
 sw.*
