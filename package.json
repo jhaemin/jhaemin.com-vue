@@ -8,7 +8,8 @@
     "dev": "cross-env NUXT_HOST=0.0.0.0 NUXT_PORT=3500 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "animejs": "^3.0.1",
@@ -19,8 +20,10 @@
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
+    "push-dir": "^0.4.1",
     "sass-loader": "^7.1.0"
   }
 }
