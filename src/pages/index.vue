@@ -201,44 +201,44 @@
 
         <div class="acts">
           <div class="grid-item-wrapper">
-            <box class="gallery" box-link="/gallery">
+            <Box class="gallery" box-link="/gallery">
               <template v-slot:title>갤러리</template>
               <template v-slot:description
                 >나의 눈부신 작업과 확고한 디자인 철학을 만나보세요.</template
               >
-            </box>
+            </Box>
           </div>
           <!-- <div class="grid-item-wrapper">
-            <box class="blog" box-link="/">
+            <Box class="blog" box-link="/">
               <template v-slot:title>블로그</template>
               <template v-slot:description></template>
             </box>
           </div>-->
           <div class="grid-item-wrapper">
-            <box class="eodiro" box-external-link="https://eodiro.com">
+            <Box class="eodiro" box-external-link="https://eodiro.com">
               <template v-slot:title>어디로</template>
               <template v-slot:description
                 >중대생이 만든 중대생을 위한 필수 서비스</template
               >
-            </box>
+            </Box>
           </div>
           <!-- <div class="grid-item-wrapper">
-            <box class="poltoday" box-link="/">
+            <Box class="poltoday" box-link="/">
               <template v-slot:title>PolToday</template>
               <template v-slot:description>의무경찰 행정 관리 시스템</template>
             </box>
           </div>-->
           <!-- <div class="grid-item-wrapper">
-            <box class="poltoday" box-link="/">
+            <Box class="poltoday" box-link="/">
               <template v-slot:title>WEBuffet</template>
               <template v-slot:description>웹사이트를 내맘대로</template>
             </box>
           </div>-->
           <div class="grid-item-wrapper">
-            <box class="github" box-external-link="https://github.com/jhaemin">
+            <Box class="github" box-external-link="https://github.com/jhaemin">
               <template v-slot:title>GitHub</template>
               <template v-slot:description>github.com/jhaemin</template>
-            </box>
+            </Box>
           </div>
         </div>
       </div>
