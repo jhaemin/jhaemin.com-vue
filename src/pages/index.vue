@@ -10,7 +10,13 @@
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
           >
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g
+              id="Page-1"
+              stroke="none"
+              stroke-width="1"
+              fill="none"
+              fill-rule="evenodd"
+            >
               <path
                 d="M1.01399788,53.734375 C1.4384202,68.7846407 11.4892183,77.90625 27.734375,77.90625 C44.5384606,77.90625 54.1269531,69.0151024 54.1269531,53.2226562 L54.1269531,8.2265625 L35.4238281,8.2265625 L35.4238281,53.0761719 C35.4238281,59.1731803 32.6082768,62.5722656 27.4414062,62.5722656 C22.4115022,62.5722656 19.2017878,59.1838313 18.8554164,53.734375 L1.01399788,53.734375 Z"
                 id="Path"
@@ -79,7 +85,7 @@
               ></path>
             </g>
           </svg>
-    
+
           <svg
             class="jhaemin-complete"
             viewBox="0 0 639 98"
@@ -87,7 +93,13 @@
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
           >
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g
+              id="Page-1"
+              stroke="none"
+              stroke-width="1"
+              fill="none"
+              fill-rule="evenodd"
+            >
               <path
                 d="M1.01399788,53.734375 C1.4384202,68.7846407 11.4892183,77.90625 27.734375,77.90625 C44.5384606,77.90625 54.1269531,69.0151024 54.1269531,53.2226562 L54.1269531,8.2265625 L35.4238281,8.2265625 L35.4238281,53.0761719 C35.4238281,59.1731803 32.6082768,62.5722656 27.4414062,62.5722656 C22.4115022,62.5722656 19.2017878,59.1838313 18.8554164,53.734375 L1.01399788,53.734375 Z"
                 id="Path"
@@ -173,26 +185,27 @@
               src="~/assets/images/janghaemin.svg"
               class="jhaemin-complete-noscript"
               alt="Jang Haemin Logo"
-            >
+            />
           </noscript>
         </div>
       </div>
-    
+
       <div class="home-content">
         <div class="about-preview">
           <p class="manifesto">
-            🙋‍♂️ 안녕하세요! 개발자 장해민입니다.
-            <br>중앙대학교에서 소프트웨어를 공부하고 있습니다.
-            <br>팝송, 영화, 웹툰, 여행을 좋아합니다.
-            <br>단순함과 정교함을 추구합니다.
+            안녕하세요! 개발자 장해민입니다.
+            <br />중앙대학교에서 소프트웨어를 공부하고 있습니다.<br />단순함과
+            정교함을 추구합니다.
           </p>
         </div>
-    
+
         <div class="acts">
           <div class="grid-item-wrapper">
             <box class="gallery" box-link="/gallery">
               <template v-slot:title>갤러리</template>
-              <template v-slot:description>나의 눈부신 작업과 확고한 디자인 철학을 만나보세요.</template>
+              <template v-slot:description
+                >나의 눈부신 작업과 확고한 디자인 철학을 만나보세요.</template
+              >
             </box>
           </div>
           <!-- <div class="grid-item-wrapper">
@@ -204,7 +217,9 @@
           <div class="grid-item-wrapper">
             <box class="eodiro" box-external-link="https://eodiro.com">
               <template v-slot:title>어디로</template>
-              <template v-slot:description>중대생이 만든 중대생을 위한 필수 서비스</template>
+              <template v-slot:description
+                >중대생이 만든 중대생을 위한 필수 서비스</template
+              >
             </box>
           </div>
           <!-- <div class="grid-item-wrapper">
