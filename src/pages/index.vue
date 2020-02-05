@@ -201,11 +201,14 @@
 
         <div class="acts">
           <div class="grid-item-wrapper">
-            <Box class="gallery" box-link="/gallery">
-              <template v-slot:title>갤러리</template>
-              <template v-slot:description
-                >나의 눈부신 작업과 확고한 디자인 철학을 만나보세요.</template
-              >
+            <Box class="" box-link="/photography">
+              <template v-slot:title>포토그래피</template>
+            </Box>
+          </div>
+          <div class="grid-item-wrapper">
+            <Box class="design" box-link="/design">
+              <template v-slot:title>디자인</template>
+              <template v-slot:description> </template>
             </Box>
           </div>
           <!-- <div class="grid-item-wrapper">
@@ -217,9 +220,7 @@
           <div class="grid-item-wrapper">
             <Box class="eodiro" box-external-link="https://eodiro.com">
               <template v-slot:title>어디로</template>
-              <template v-slot:description
-                >중대생이 만든 중대생을 위한 필수 서비스</template
-              >
+              <template v-slot:description></template>
             </Box>
           </div>
           <!-- <div class="grid-item-wrapper">
@@ -250,20 +251,20 @@
 <script>
 import anime from 'animejs'
 import axios from 'axios'
-import Box from '~/components/Home/Box.vue'
+import Box from '~/components/home/Box'
 
 export default {
   scrollToTop: false,
   components: { Box },
   asyncData() {
     return {
-      project: 'nuxt'
+      project: 'nuxt',
     }
   },
   data() {
     return {
       project: 'default',
-      popupEnabled: false
+      popupEnabled: false,
     }
   },
   mounted() {
@@ -292,7 +293,7 @@ export default {
       targets: '.jhaemin-path',
       opacity: 1,
       easing: 'easeInOutQuad',
-      duration: 100
+      duration: 100,
     })
 
     anime({
@@ -304,7 +305,7 @@ export default {
         return i * 100
       },
       direction: 'alternate',
-      loop: false
+      loop: false,
     })
 
     anime({
@@ -313,13 +314,13 @@ export default {
       // easing: "linear",
       easing: 'cubicBezier(.78,.2,.26,.94)',
       duration: 500,
-      delay: 2300
+      delay: 2300,
     })
-  }
+  },
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '~/assets/scss/global-variables.scss';
 @import '~/assets/scss/global-mixins.scss';
 

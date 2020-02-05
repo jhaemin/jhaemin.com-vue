@@ -1,7 +1,7 @@
 {
-  "name": "jhaemin-new",
+  "name": "jhaemin.com",
   "version": "1.0.0",
-  "description": "My sensational Nuxt.js project",
+  "description": "My portfolio website",
   "author": "Jang Haemin",
   "private": true,
   "scripts": {
@@ -19,6 +19,9 @@
     "scroll-lock": "^2.1.2"
   },
   "devDependencies": {
+    "@nuxt/types": "^0.6.1",
+    "@nuxtjs/eslint-config": "^2.0.0",
+    "@nuxtjs/eslint-module": "^1.1.0",
     "cross-env": "^7.0.0",
     "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",

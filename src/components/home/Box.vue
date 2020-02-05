@@ -2,7 +2,7 @@
   <div class="box-origin">
     <div
       class="box"
-      :class="[boxStatus, {expand: expanded}]"
+      :class="[boxStatus, { expand: expanded }]"
       @mouseenter="hoverBox"
       @mouseleave="releaseBox"
       @mousedown="pressBox"
@@ -23,13 +23,13 @@
         v-else-if="boxExternalLink"
         target="_blank"
         class="link"
-      ></a>
+      />
       <div class="box-content">
         <h1 class="title">
-          <slot name="title"></slot>
+          <slot name="title" />
         </h1>
-        <p class="description">
-          <slot name="description"></slot>
+        <p v-if="$slots.description" class="description">
+          <slot name="description" />
         </p>
       </div>
     </div>
@@ -43,7 +43,7 @@ export default {
     return {
       boxStatus: '',
       relaseTimeout: null,
-      expanded: false
+      expanded: false,
     }
   },
   methods: {
@@ -87,12 +87,12 @@ export default {
           box.style = ''
         }, 10)
       }, 800)
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '~/assets/scss/global-variables.scss';
 @import '~/assets/scss/global-mixins.scss';
 
@@ -112,7 +112,7 @@ export default {
 
   &.pressed {
     transform: scale(0.92);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
   }
 
   &.expand {
