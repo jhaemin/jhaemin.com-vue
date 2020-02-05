@@ -1,7 +1,0 @@
-# robots.txt for http://www.jhaemin.com/
-
-User-agent: *
-Disallow: /login/
-Disallow: /logout/
-Disallow: /blog/new/
-Disallow: /princess/

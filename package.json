@@ -1,32 +1,26 @@
 {
   "name": "jhaemin.com",
   "version": "1.0.0",
-  "description": "My portfolio website",
-  "author": "Jang Haemin",
-  "private": true,
+  "description": "Jang Haemin Portfolio Website",
   "scripts": {
-    "dev": "cross-env NUXT_HOST=0.0.0.0 NUXT_PORT=3500 nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "deploy": "gh-pages -d dist"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhaemin/jhaemin.com.git"
+  },
+  "author": "",
+  "license": "MIT",
   "dependencies": {
-    "animejs": "^3.1.0",
-    "axios": "^0.19.2",
-    "body-scroll-lock": "^2.6.4",
-    "nuxt": "^2.11.0",
-    "scroll-lock": "^2.1.2"
+    "next": "^9.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "@nuxt/types": "^0.6.1",
-    "@nuxtjs/eslint-config": "^2.0.0",
-    "@nuxtjs/eslint-module": "^1.1.0",
-    "cross-env": "^7.0.0",
-    "gh-pages": "^2.2.0",
-    "node-sass": "^4.13.1",
-    "nodemon": "^2.0.2",
-    "push-dir": "^0.4.1",
-    "sass-loader": "^8.0.2"
+    "@types/node": "^13.7.0",
+    "@types/react": "^16.9.19",
+    "typescript": "^3.7.5"
   }
 }
