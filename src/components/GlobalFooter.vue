@@ -1,7 +1,7 @@
 <template>
-  <footer id="globalfooter" :class="{hidden: $store.state.gf.hidden}">
+  <footer id="globalfooter" :class="{ hidden: $store.state.gf.hidden }">
     <div class="wrapper">
-      <p class="text">&copy; 2015-{{ currentYear }} JHaemin.com</p>
+      <p class="text">&copy; 2015–{{ currentYear }} jhaemin.com</p>
     </div>
   </footer>
 </template>
@@ -11,7 +11,7 @@ export default {
   data() {
     return {
       currentYear: new Date().getFullYear(),
-  }
+    }
   },
 }
 </script>
