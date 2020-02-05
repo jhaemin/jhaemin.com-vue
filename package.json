@@ -5,22 +5,28 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "export": "next export",
+    "start": "next start",
+    "deploy": "rimraf out && next build && next export && touch out/CNAME && echo \"jhaemin.com\" >> out/CNAME && gh-pages -d out"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jhaemin/jhaemin.com.git"
   },
-  "author": "",
+  "author": "Jang Haemin",
   "license": "MIT",
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "next": "^9.2.1",
+    "node-sass": "npm:sass@^1.25.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "@types/node": "^13.7.0",
     "@types/react": "^16.9.19",
+    "gh-pages": "^2.2.0",
+    "rimraf": "^3.0.1",
     "typescript": "^3.7.5"
   }
 }
