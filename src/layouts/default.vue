@@ -1,19 +1,19 @@
 <template>
   <div id="jhm-web">
-    <nuxt class="main" />
+    <Nuxt class="main" />
     <GlobalFooter />
   </div>
 </template>
 
 <script>
-import GlobalFooter from '~/components/GlobalFooter.vue'
+import GlobalFooter from '~/components/GlobalFooter'
 
 export default {
-  components: { GlobalFooter }
+  components: { GlobalFooter },
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '~/assets/scss/global-variables.scss';
 @import '~/assets/scss/global-mixins.scss';
 
