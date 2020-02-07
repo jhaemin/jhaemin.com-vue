@@ -11,13 +11,12 @@
       @touchend="releaseBox"
       @dragstart="$event.preventDefault()"
     >
-      <nuxt-link
+      <NuxtLink
         :event="'click'"
         v-if="boxLink"
         :to="boxLink ? boxLink : '/'"
         class="link"
-        @click.native="expandBox"
-      ></nuxt-link>
+      ></NuxtLink>
       <a
         :href="boxExternalLink ? boxExternalLink : ''"
         v-else-if="boxExternalLink"
@@ -98,7 +97,8 @@ export default {
 
 .box {
   position: relative;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
   background-color: #fff;
   border-radius: 0.8rem;
   padding: 1.2rem;
@@ -107,12 +107,13 @@ export default {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   &.hovered {
-    transform: scale(1.03);
+    transform: scale(1.02);
+    box-shadow: 0 0.4rem 0.7rem rgba(0, 0, 0, 0.1);
   }
 
   &.pressed {
-    transform: scale(0.92);
-    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
+    transform: scale(0.97);
+    box-shadow: 0 0.15rem 0.2rem rgba(0, 0, 0, 0.1);
   }
 
   &.expand {
