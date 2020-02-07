@@ -9,7 +9,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "add-domain": "echo \"jhaemin.com\" > build/CNAME",
+    "add-domain": "echo \"jhaemin.com\" > dist/CNAME",
     "deploy": "npm run generate && npm run add-domain && gh-pages -d dist"
   },
   "dependencies": {
