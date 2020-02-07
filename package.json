@@ -9,7 +9,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "gh-pages -d dist"
+    "add-domain": "echo \"jhaemin.com\" > build/CNAME",
+    "deploy": "npm run generate && npm run add-domain && gh-pages -d dist"
   },
   "dependencies": {
     "animejs": "^3.1.0",
