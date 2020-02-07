@@ -343,7 +343,7 @@ export default {}
       transform: translateY(90%);
       font-size: 4rem;
       font-weight: 800;
-      animation: ani-title 1.5s ease 0.2s forwards;
+      animation: ani-title 1.2s ease 0.2s forwards;
     }
   }
 
