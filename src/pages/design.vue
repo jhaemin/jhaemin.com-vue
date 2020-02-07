@@ -1,19 +1,11 @@
 <template>
   <main id="gallery">
     <div class="content">
-      <div class="close-wrapper">
-        <button class="close">
-          <nuxt-link to="/" class="expanded"></nuxt-link>
-        </button>
-      </div>
       <div class="face">
         <div class="face-content">
           <h1 class="title" data-aos="fade-up">
-            갤러리에 오신 것을 환영합니다.
+            Design
           </h1>
-          <p class="manifesto">
-            이 곳에서 나의 눈부신 작업과 확고한 디자인 철학을 만나보세요.
-          </p>
         </div>
       </div>
 
@@ -43,9 +35,9 @@
       <section class="gallery-section ui-ux">
         <h1 class="section-title">UI AND UX</h1>
         <p class="section-manifesto sm-ui-ux">
-          잘 디자인된 인터페이스는 그 복잡도와 관계없이, 자세한 설명 없이도
-          사용할 수 있어야 합니다. 적절한 속도와 부드럽게 다듬어진 애니메이션은
-          UI의 변화를 시각적으로 표현하여 재미와 중독성을 유발합니다.
+          잘 디자인된 인터페이스는 설명 없이도 쉽게 사용될 수 있어야 합니다.
+          적절한 속도와 부드럽게 다듬어진 애니메이션은 UI의 변화를 시각적으로
+          표현하여 재미와 중독성을 유발합니다.
         </p>
         <img
           class="input-ui-img"
@@ -70,22 +62,6 @@
           <div class="icon-item">
             <div class="icon-img-wrapper">
               <img
-                src="~/assets/images/gallery/icons/payw.png"
-                alt
-                data-appearance-mode="light"
-              />
-              <img
-                src="~/assets/images/gallery/icons/payw_dark.png"
-                alt
-                data-appearance-mode="dark"
-              />
-            </div>
-            <span class="icon-name">Payw</span>
-          </div>
-
-          <div class="icon-item">
-            <div class="icon-img-wrapper">
-              <img
                 class="pvm-img"
                 src="~/assets/images/gallery/icons/povium.png"
                 alt
@@ -99,6 +75,22 @@
               />
             </div>
             <span class="icon-name">Povium</span>
+          </div>
+
+          <div class="icon-item">
+            <div class="icon-img-wrapper">
+              <img
+                src="~/assets/images/gallery/icons/v2-jhaemin.com@0.5x.png"
+                alt
+                data-appearance-mode="light"
+              />
+              <img
+                src="~/assets/images/gallery/icons/payw_dark.png"
+                alt
+                data-appearance-mode="dark"
+              />
+            </div>
+            <span class="icon-name">PAYW</span>
           </div>
 
           <div class="icon-item">
@@ -190,9 +182,6 @@
             />
           </div>
         </div>
-        <span class="copyright-declaration"
-          >모든 디자인은 Jang Haemin에게 권리가 있습니다.</span
-        >
       </section>
 
       <section class="gallery-section business-card">
@@ -242,8 +231,8 @@
         </div>
       </section>
 
-      <section class="gallery-section three-dimension">
-        <h1 class="section-title">3D BADGE DESIGN</h1>
+      <section class="gallery-section caucse-badge">
+        <h1 class="section-title">CAUCSE BADGE</h1>
         <p class="section-manifesto sm-td">
           2016년에 채택된 중앙대학교 컴퓨터공학부(소프트웨어학부) 대표
           배지입니다.
@@ -270,40 +259,10 @@
 </template>
 
 <script>
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from 'body-scroll-lock'
-import scrollLock from 'scroll-lock'
-
-export default {
-  mounted() {
-    scrollLock.disablePageScroll(this.$el)
-  },
-  beforeDestroy() {
-    scrollLock.enablePageScroll(this.$el)
-    this.$el.style.transition =
-      'transform 400ms ease, opacity 400ms ease, border-radius 400ms ease'
-    this.$el.style.transformOrigin = '0 0'
-    let origin = document.querySelector('.box-origin.gallery')
-    let rect = origin.getBoundingClientRect()
-    let top = rect.top
-    let left = rect.left
-    let width = rect.width
-    let height = rect.height
-    this.$el.style.transform = `translateX(${left}px) translateY(${top}px) scaleX(${width /
-      this.$el.getBoundingClientRect().width}) scaleY(${height /
-      this.$el.getBoundingClientRect().height})`
-    this.$el.style.borderRadius = '50px'
-    const contentElm = this.$el.querySelector('.content')
-    contentElm.style.transition = 'opacity 400ms ease'
-    contentElm.style.opacity = '0'
-  },
-}
+export default {}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '~/assets/scss/global-mixins.scss';
 @import '~/assets/scss/global-variables.scss';
 
@@ -371,7 +330,7 @@ export default {
     @keyframes ani-title {
       0% {
         opacity: 0;
-        transform: translateY(90%);
+        transform: translateY(20%);
       }
       100% {
         opacity: 1;
@@ -382,17 +341,9 @@ export default {
     .title {
       opacity: 0;
       transform: translateY(90%);
-      font-size: 2.2rem;
+      font-size: 4rem;
       font-weight: 800;
       animation: ani-title 1.5s ease 0.2s forwards;
-    }
-
-    .manifesto {
-      opacity: 0;
-      transform: translateY(90%);
-      font-size: 1.1rem;
-      font-weight: 400;
-      animation: ani-title 1.3s ease 0.5s forwards;
     }
   }
 
@@ -489,7 +440,7 @@ export default {
           font-weight: 500;
           text-align: center;
           padding-top: 0.7rem;
-          display: none;
+          // display: none;
         }
       }
     }
@@ -515,14 +466,6 @@ export default {
           object-fit: contain;
         }
       }
-    }
-
-    .copyright-declaration {
-      font-size: 0.7rem;
-      color: $light-gray-text;
-      display: block;
-      text-align: center;
-      padding-top: 2rem;
     }
   }
 
@@ -587,7 +530,7 @@ export default {
     }
   }
 
-  .three-dimension {
+  .caucse-badge {
     .sm-td {
       max-width: none;
     }
