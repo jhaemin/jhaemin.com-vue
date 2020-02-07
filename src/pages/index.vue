@@ -193,22 +193,24 @@
       <div class="home-content">
         <div class="about-preview">
           <p class="manifesto">
-            안녕하세요! 개발자 장해민입니다.
-            <br />중앙대학교에서 소프트웨어를 공부하고 있습니다.<br />단순함과
-            정교함을 추구합니다.
+            안녕하세요, 장해민입니다.
+            <br />
+            중앙대학교에서 소프트웨어를 공부하고 있습니다.
+            <br />
+            단순함과 정교함을 추구합니다.
           </p>
         </div>
 
         <div class="acts">
           <div class="grid-item-wrapper">
             <Box class="" box-link="/photography">
-              <template v-slot:title>포토그래피</template>
+              <template v-slot:title>Photography</template>
             </Box>
           </div>
           <div class="grid-item-wrapper">
             <Box class="design" box-link="/design">
-              <template v-slot:title>디자인</template>
-              <template v-slot:description> </template>
+              <template v-slot:title>Design</template>
+              <template v-slot:description></template>
             </Box>
           </div>
           <!-- <div class="grid-item-wrapper">
@@ -220,7 +222,9 @@
           <div class="grid-item-wrapper">
             <Box class="eodiro" box-external-link="https://eodiro.com">
               <template v-slot:title>어디로</template>
-              <template v-slot:description></template>
+              <template v-slot:description>
+                중앙대학교 유틸리티 서비스
+              </template>
             </Box>
           </div>
           <!-- <div class="grid-item-wrapper">
@@ -279,8 +283,6 @@ export default {
     //   })
     let homeContent = this.$el.querySelector('.home-content')
     let intro = document.querySelector('.intro')
-
-    document.documentElement.style.backgroundColor = '#fff'
 
     let timeoutAmount = 2500
     if (sessionStorage.getItem('sawHome') === 'true') {
