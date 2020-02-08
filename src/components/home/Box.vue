@@ -10,6 +10,7 @@
       @touchstart="pressBox"
       @touchend="releaseBox"
       @dragstart="$event.preventDefault()"
+      @click="clickBox"
     >
       <NuxtLink
         :event="'click'"
@@ -46,6 +47,21 @@ export default {
     }
   },
   methods: {
+    clickBox() {
+      // TODO: animate and redirect
+      const linkElm = this.$el.querySelector('.link')
+      /** @type {string} */
+      const href = linkElm.href
+      const protocol = window.location.protocol
+      const host = window.location.host
+      if (this.boxExternalLink) {
+        window.location.href = href
+      } else {
+        setTimeout(() => {
+          this.$router.push(href.replace(`${protocol}//${host}`, ''))
+        }, 300)
+      }
+    },
     hoverBox() {
       this.boxStatus = 'hovered'
     },
@@ -106,6 +122,8 @@ export default {
   user-select: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
+  text-align: center;
+
   &.hovered {
     transform: scale(1.02);
     box-shadow: 0 0.4rem 0.7rem rgba(0, 0, 0, 0.1);
@@ -135,6 +153,7 @@ export default {
     right: 0;
     bottom: 0;
     left: 0;
+    pointer-events: none;
   }
 
   .title {
