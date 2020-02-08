@@ -229,6 +229,16 @@
             </box>
           </div>-->
           <div class="grid-item-wrapper">
+            <Box class="payw" box-external-link="https://payw.org">
+              <template v-slot:title>
+                PAYW
+              </template>
+              <template v-slot:description>
+                Pay As You Want
+              </template>
+            </Box>
+          </div>
+          <div class="grid-item-wrapper">
             <Box class="eodiro" box-external-link="https://eodiro.com">
               <template v-slot:title>
                 eodiro
@@ -270,7 +280,6 @@
 
 <script>
 import anime from 'animejs'
-import axios from 'axios'
 import Box from '~/components/home/Box'
 
 export default {
@@ -288,25 +297,6 @@ export default {
     }
   },
   mounted() {
-    // axios
-    //   .get('http://localhost:4000/auth', {
-    //     params: {
-    //       APIKey: 'hello world'
-    //     }
-    //   })
-    //   .then(res => {
-    //     console.log(res.data)
-    //   })
-    const homeContent = this.$el.querySelector('.home-content')
-    const intro = document.querySelector('.intro')
-
-    let timeoutAmount = 2500
-    if (sessionStorage.getItem('sawHome') === 'true') {
-      timeoutAmount = 0
-    }
-
-    sessionStorage.setItem('sawHome', 'true')
-
     anime({
       targets: '.jhaemin-path',
       opacity: 1,
@@ -343,8 +333,7 @@ export default {
 @import '~/assets/scss/global-mixins.scss';
 
 #home {
-  width: calc(100% - #{2 * $moderate-gap});
-  // max-width: 37rem;
+  width: calc(100% - 3rem);
   margin: auto;
   padding-bottom: $moderate-bottom;
 
@@ -413,7 +402,7 @@ export default {
       margin: auto;
       margin-top: 5rem;
       display: grid;
-      grid-gap: $moderate-gap $moderate-gap;
+      grid-gap: 1.5rem;
       grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     }
   }
