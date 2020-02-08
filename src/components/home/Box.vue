@@ -125,8 +125,8 @@ export default {
   text-align: center;
 
   &.hovered {
-    transform: scale(1.02);
-    box-shadow: 0 0.4rem 0.7rem rgba(0, 0, 0, 0.1);
+    // transform: scale(1.02);
+    // box-shadow: 0 0.4rem 0.7rem rgba(0, 0, 0, 0.1);
   }
 
   &.pressed {
