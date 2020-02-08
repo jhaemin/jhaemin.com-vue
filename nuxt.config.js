@@ -1,7 +1,8 @@
 const title = 'J.Haemin | 장해민'
 const description = '안녕하세요. 개발자 장해민입니다.'
 
-export default {
+/** @type {import('@nuxt/types').Configuration} */
+const config = {
   globalName: 'jhaemin',
   mode: 'universal',
   head: {
@@ -9,7 +10,7 @@ export default {
       lang: 'ko',
       class: 'light-mode',
     },
-    title: title,
+    title,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -54,5 +55,11 @@ export default {
   // },
   build: {
     publicPath: '/dist/',
+    splitChunks: {
+      commons: true,
+      layouts: true,
+      pages: true,
+    },
   },
 }
+export default config
