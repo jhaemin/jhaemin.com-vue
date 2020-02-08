@@ -58,7 +58,7 @@
           뛰어난 함축성과 간결한 형태는 보는 이로 하여금 호기심을 자극하고
           애착이 가게 만듭니다.
         </p>
-        <div class="icon-container">
+        <div class="icon-container povium">
           <div class="icon-item">
             <div class="icon-img-wrapper">
               <img
@@ -77,20 +77,37 @@
             <span class="icon-name">Povium</span>
           </div>
 
-          <div class="icon-item">
+          <div class="icon-item payw">
             <div class="icon-img-wrapper">
               <img
                 src="~/assets/images/gallery/icons/v2-jhaemin.com@0.5x.png"
                 alt
                 data-appearance-mode="light"
               />
-              <img
-                src="~/assets/images/gallery/icons/payw_dark.png"
-                alt
-                data-appearance-mode="dark"
-              />
             </div>
             <span class="icon-name">PAYW</span>
+          </div>
+
+          <div class="icon-item eodiro">
+            <div class="icon-img-wrapper">
+              <img
+                src="~/assets/images/gallery/icons/eodiro-logo.png"
+                alt
+                data-appearance-mode="light"
+              />
+            </div>
+            <span class="icon-name">eodiro</span>
+          </div>
+
+          <div class="icon-item clowd">
+            <div class="icon-img-wrapper">
+              <img
+                src="~/assets/images/gallery/icons/clowd-logo.png"
+                alt
+                data-appearance-mode="light"
+              />
+            </div>
+            <span class="icon-name">Clowd</span>
           </div>
 
           <div class="icon-item">
@@ -400,13 +417,16 @@ export default {}
       text-align: center;
       padding-top: 3rem;
       display: flex;
-      max-width: 30rem;
+      flex-wrap: wrap;
+      max-width: 40rem;
       margin: auto;
 
       .icon-item {
         display: inline-block;
         vertical-align: top;
         width: 8rem;
+        min-width: 8rem;
+        margin: 1.5rem 0;
         flex: 1;
 
         .icon-img-wrapper {
@@ -423,8 +443,8 @@ export default {}
             height: 100%;
 
             &.pvm-img {
-              width: 85%;
-              height: 85%;
+              width: 83%;
+              height: 83%;
             }
 
             &.bj-img {
@@ -441,6 +461,18 @@ export default {}
           text-align: center;
           padding-top: 0.7rem;
           // display: none;
+        }
+
+        &.payw img {
+          transform: scale(1.05) translateY(-3%);
+        }
+
+        &.eodiro img {
+          transform: translateY(-5%);
+        }
+
+        &.clowd img {
+          transform: scale(1.2) translateY(-4%);
         }
       }
     }
