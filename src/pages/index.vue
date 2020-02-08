@@ -205,12 +205,17 @@
           <div class="grid-item-wrapper">
             <Box class="" box-link="/photography">
               <template v-slot:title>Photography</template>
+              <template v-slot:description>
+                iPhone으로 찍는 최고의 사진
+              </template>
             </Box>
           </div>
           <div class="grid-item-wrapper">
             <Box class="design" box-link="/design">
               <template v-slot:title>Design</template>
-              <template v-slot:description></template>
+              <template v-slot:description>
+                로고, 아이콘, UI, 그리고 UX
+              </template>
             </Box>
           </div>
           <!-- <div class="grid-item-wrapper">
@@ -222,9 +227,7 @@
           <div class="grid-item-wrapper">
             <Box class="eodiro" box-external-link="https://eodiro.com">
               <template v-slot:title>어디로</template>
-              <template v-slot:description>
-                중앙대학교 유틸리티 서비스
-              </template>
+              <template v-slot:description>중앙대학교 유틸리티 서비스</template>
             </Box>
           </div>
           <!-- <div class="grid-item-wrapper">
@@ -242,7 +245,7 @@
           <div class="grid-item-wrapper">
             <Box class="github" box-external-link="https://github.com/jhaemin">
               <template v-slot:title>GitHub</template>
-              <template v-slot:description>github.com/jhaemin</template>
+              <template v-slot:description>이 웹사이트마저도 오픈소스</template>
             </Box>
           </div>
         </div>
