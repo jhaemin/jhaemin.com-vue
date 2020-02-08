@@ -13,14 +13,14 @@
       @click="clickBox"
     >
       <NuxtLink
-        :event="'click'"
         v-if="boxLink"
+        :event="'click'"
         :to="boxLink ? boxLink : '/'"
         class="link"
-      ></NuxtLink>
+      />
       <a
-        :href="boxExternalLink ? boxExternalLink : ''"
         v-else-if="boxExternalLink"
+        :href="boxExternalLink ? boxExternalLink : ''"
         target="_blank"
         class="link"
       />
@@ -85,7 +85,7 @@ export default {
       const windowWidth = window.innerWidth
       const height = rect.height
       const windowHeight = window.innerHeight
-      let transform = `translateX(${-left}px) translateY(${-top}px) scaleX(${windowWidth /
+      const transform = `translateX(${-left}px) translateY(${-top}px) scaleX(${windowWidth /
         width}) scaleY(${windowHeight / height})`
       this.expanded = true
       // box.style.transition = 'transform 400ms ease, border-radius 400ms'
