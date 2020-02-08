@@ -38,7 +38,16 @@
 
 <script>
 export default {
-  props: ['boxLink', 'boxExternalLink'],
+  props: {
+    boxLink: {
+      type: String,
+      default: '',
+    },
+    boxExternalLink: {
+      type: String,
+      default: '',
+    },
+  },
   data() {
     return {
       boxStatus: '',
