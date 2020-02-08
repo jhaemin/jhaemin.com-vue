@@ -1,4 +1,14 @@
 {
   "root": true,
-  "extends": ["@nuxtjs"]
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/recommended",
+    "@nuxtjs",
+    "prettier"
+  ],
+  "rules": {
+    "vue/html-self-closing": "off",
+    "vue/html-indent": "off",
+    "no-unused-vars": "warn"
+  }
 }
