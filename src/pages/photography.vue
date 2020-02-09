@@ -84,6 +84,7 @@
 </template>
 
 <script>
+// TODO: Add a parallax effect to New York main photo
 import PhotoSection from '~/components/photography/PhotoSection'
 
 export default {
