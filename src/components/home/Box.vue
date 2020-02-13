@@ -10,12 +10,17 @@
       @touchstart="pressBox"
       @touchend="releaseBox"
       @dragstart="$event.preventDefault()"
-      @click="clickBox"
     >
-      <NuxtLink
+      <!-- <NuxtLink
         v-if="boxLink"
         :event="'click'"
         :to="boxLink ? boxLink : '/'"
+        class="link"
+      /> -->
+      <a
+        v-if="boxLink"
+        :event="'click'"
+        :href="boxLink ? boxLink : '/'"
         class="link"
       />
       <a
@@ -162,7 +167,7 @@ export default {
     right: 0;
     bottom: 0;
     left: 0;
-    pointer-events: none;
+    // pointer-events: none;
   }
 
   .title {
