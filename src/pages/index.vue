@@ -274,7 +274,6 @@
         </div>
       </div>
     </main>
-    <nuxt-child class="popup" />
   </div>
 </template>
 
@@ -285,17 +284,6 @@ import Box from '~/components/home/Box'
 export default {
   scrollToTop: false,
   components: { Box },
-  asyncData() {
-    return {
-      project: 'nuxt',
-    }
-  },
-  data() {
-    return {
-      project: 'default',
-      popupEnabled: false,
-    }
-  },
   mounted() {
     anime({
       targets: '.jhaemin-path',
@@ -303,7 +291,6 @@ export default {
       easing: 'easeInOutQuad',
       duration: 100,
     })
-
     anime({
       targets: '.jhaemin-path path',
       strokeDashoffset: [anime.setDashoffset, 0],
@@ -315,7 +302,6 @@ export default {
       direction: 'alternate',
       loop: false,
     })
-
     anime({
       targets: '.jhaemin-complete',
       opacity: 1,
@@ -341,7 +327,7 @@ export default {
     text-align: center;
     height: calc(100vh - #{$gn-height * 3});
     height: 50vh;
-    min-height: 15rem;
+    min-height: 30rem;
     display: flex;
     // transition: height 1s ease;
 
@@ -392,15 +378,42 @@ export default {
   }
 
   .home-content {
+    display: flex;
+    max-width: 85rem;
+    margin: auto;
+
+    @include smaller-than(620px) {
+      & {
+        flex-wrap: wrap;
+      }
+
+      .about-preview {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
+    }
+
     .about-preview {
       text-align: center;
+      margin-right: 2rem;
       // padding-bottom: 2rem;
+
+      .manifesto {
+        font-size: 1.5rem;
+        font-weight: 800;
+        text-align: left;
+        line-height: 1.3;
+        position: sticky;
+        top: 2rem;
+      }
     }
 
     .acts {
-      max-width: 85rem;
+      flex: 1;
+      // max-width: 85rem;
       margin: auto;
-      margin-top: 5rem;
+      // margin-top: 5rem;
+      width: 100%;
       display: grid;
       grid-gap: 1.5rem;
       grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
