@@ -397,6 +397,7 @@ export default {
       text-align: center;
       margin-right: 2rem;
       // padding-bottom: 2rem;
+      display: none;
 
       .manifesto {
         font-size: 1.5rem;
@@ -414,6 +415,7 @@ export default {
       margin: auto;
       // margin-top: 5rem;
       width: 100%;
+      max-width: 64rem;
       display: grid;
       grid-gap: 1.5rem;
       grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
