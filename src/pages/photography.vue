@@ -34,6 +34,14 @@
     />
     <PhotoSection
       :img-src="
+        require(`~/assets/images/photography/gyration-july-02-2015.jpeg`)
+      "
+      :name="`Gyration`"
+      :date="`July 2nd, 2015`"
+      :device="`iPhone 5s`"
+    />
+    <PhotoSection
+      :img-src="
         require(`~/assets/images/photography/schloss-neuschwanstein-july-03-2015.jpeg`)
       "
       :name="`Schloss Neuschwanstein`"
