@@ -203,6 +203,16 @@
 
         <div class="acts">
           <div class="grid-item-wrapper">
+            <Box class="" box-external-link="https://blog.jhaemin.com">
+              <template v-slot:title>
+                <span style="color: #0e78ff;">Blog</span>
+              </template>
+              <template v-slot:description>
+                in Hashnode
+              </template>
+            </Box>
+          </div>
+          <div class="grid-item-wrapper">
             <Box class="" box-link="/photography">
               <template v-slot:title>
                 Photography
