@@ -13,24 +13,24 @@
     "deploy": "npm run generate && npm run add-domain && gh-pages -d dist"
   },
   "dependencies": {
-    "animejs": "^3.1.0",
-    "axios": "^0.19.2",
-    "body-scroll-lock": "^2.6.4",
-    "nuxt": "^2.11.0",
-    "scroll-lock": "^2.1.2"
+    "animejs": "^3.2.0",
+    "axios": "^0.20.0",
+    "body-scroll-lock": "^3.0.3",
+    "nuxt": "^2.14.3",
+    "scroll-lock": "^2.1.4"
   },
   "devDependencies": {
-    "@nuxt/types": "^0.6.1",
-    "@nuxtjs/eslint-config": "^2.0.0",
-    "@nuxtjs/eslint-module": "^1.1.0",
-    "cross-env": "^7.0.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-vue": "^6.1.2",
-    "gh-pages": "^2.2.0",
-    "node-sass": "^4.13.1",
-    "nodemon": "^2.0.2",
+    "@nuxt/types": "^2.14.3",
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.7.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "gh-pages": "^3.1.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
     "push-dir": "^0.4.1",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^9.0.3"
   }
 }
