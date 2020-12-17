@@ -213,6 +213,26 @@
             </Box>
           </div>
           <div class="grid-item-wrapper">
+            <Box class="" box-external-link="https://saying.today">
+              <template v-slot:title>
+                쎄잉 (Saying)
+              </template>
+              <template v-slot:description>
+                1일 1명언으로 의미 있는 하루를
+              </template>
+            </Box>
+          </div>
+          <div class="grid-item-wrapper">
+            <Box class="" box-external-link="https://where.land">
+              <template v-slot:title>
+                웨어랜드
+              </template>
+              <template v-slot:description>
+                엄선된 서비스 컬렉션
+              </template>
+            </Box>
+          </div>
+          <div class="grid-item-wrapper">
             <Box class="" box-link="/photography">
               <template v-slot:title>
                 Photography
